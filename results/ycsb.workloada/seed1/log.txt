@@ -1,0 +1,1536 @@
+Results will be saved @ "results/ycsb.workloada/seed1"
+
+
+Constructing new optimizer...
+Run History: None
+Ignored knobs: None
+
+input space:
+Configuration space object:
+  Hyperparameters:
+input
+    autovacuum, Type: Categorical, Choices: {on, off}, Default: on
+    autovacuum_analyze_scale_factor, Type: UniformFloat, Range: [0.0, 100.0], Default: 0.1
+    autovacuum_analyze_threshold, Type: UniformInteger, Range: [0, 1000], Default: 50
+    autovacuum_freeze_max_age, Type: UniformInteger, Range: [100000, 2000000000], Default: 200000000
+    autovacuum_max_workers, Type: UniformInteger, Range: [1, 10000], Default: 3
+    autovacuum_multixact_freeze_max_age, Type: UniformInteger, Range: [10000, 2000000000], Default: 400000000
+    autovacuum_naptime, Type: UniformInteger, Range: [1, 2147483], Default: 60
+    autovacuum_vacuum_cost_delay, Type: UniformInteger, Range: [-1, 100], Default: 20
+    autovacuum_vacuum_cost_limit, Type: UniformInteger, Range: [-1, 10000], Default: -1
+    autovacuum_vacuum_scale_factor, Type: UniformFloat, Range: [0.0, 100.0], Default: 0.2
+    autovacuum_vacuum_threshold, Type: UniformInteger, Range: [0, 2147483647], Default: 50
+    autovacuum_work_mem, Type: UniformInteger, Range: [-1, 1048576], Default: -1
+    backend_flush_after, Type: UniformInteger, Range: [0, 256], Default: 0
+    bgwriter_delay, Type: UniformInteger, Range: [10, 4000], Default: 200
+    bgwriter_flush_after, Type: UniformInteger, Range: [0, 256], Default: 64
+    bgwriter_lru_maxpages, Type: UniformInteger, Range: [0, 1000], Default: 100
+    bgwriter_lru_multiplier, Type: UniformFloat, Range: [0.0, 8.0], Default: 2.0
+    checkpoint_completion_target, Type: UniformFloat, Range: [0.0, 1.0], Default: 0.5
+    checkpoint_flush_after, Type: UniformInteger, Range: [0, 256], Default: 32
+    checkpoint_timeout, Type: UniformInteger, Range: [30, 86400], Default: 300
+    commit_delay, Type: UniformInteger, Range: [0, 4096], Default: 0
+    commit_siblings, Type: UniformInteger, Range: [0, 16], Default: 5
+    cpu_index_tuple_cost, Type: UniformFloat, Range: [0.0, 4.0], Default: 0.005
+    cpu_operator_cost, Type: UniformFloat, Range: [0.0, 4.0], Default: 0.0025
+    cpu_tuple_cost, Type: UniformFloat, Range: [0.0, 4.0], Default: 0.01
+    cursor_tuple_fraction, Type: UniformFloat, Range: [0.0, 1.0], Default: 0.1
+    data_sync_retry, Type: Categorical, Choices: {on, off}, Default: off
+    deadlock_timeout, Type: UniformInteger, Range: [1, 5000], Default: 1000
+    default_statistics_target, Type: UniformInteger, Range: [1, 5120], Default: 100
+    default_transaction_deferrable, Type: Categorical, Choices: {on, off}, Default: off
+    effective_cache_size, Type: UniformInteger, Range: [1, 2097152], Default: 524288
+    effective_io_concurrency, Type: UniformInteger, Range: [0, 512], Default: 1
+    enable_bitmapscan, Type: Categorical, Choices: {on, off}, Default: on
+    enable_hashagg, Type: Categorical, Choices: {on, off}, Default: on
+    enable_hashjoin, Type: Categorical, Choices: {on, off}, Default: on
+    enable_indexonlyscan, Type: Categorical, Choices: {on, off}, Default: on
+    enable_indexscan, Type: Categorical, Choices: {on, off}, Default: on
+    enable_material, Type: Categorical, Choices: {on, off}, Default: on
+    enable_mergejoin, Type: Categorical, Choices: {on, off}, Default: on
+    enable_nestloop, Type: Categorical, Choices: {on, off}, Default: on
+    enable_seqscan, Type: Categorical, Choices: {on, off}, Default: on
+    enable_sort, Type: Categorical, Choices: {on, off}, Default: on
+    enable_tidscan, Type: Categorical, Choices: {on, off}, Default: on
+    from_collapse_limit, Type: UniformInteger, Range: [1, 50], Default: 8
+    full_page_writes, Type: Categorical, Choices: {on, off}, Default: on
+    geqo, Type: Categorical, Choices: {on, off}, Default: on
+    geqo_effort, Type: UniformInteger, Range: [1, 10], Default: 5
+    geqo_generations, Type: UniformInteger, Range: [0, 1000], Default: 0
+    geqo_pool_size, Type: UniformInteger, Range: [0, 1000], Default: 0
+    geqo_seed, Type: UniformFloat, Range: [0.0, 1.0], Default: 0.0
+    geqo_selection_bias, Type: UniformFloat, Range: [1.5, 2.0], Default: 2.0
+    geqo_threshold, Type: UniformInteger, Range: [2, 50], Default: 12
+    join_collapse_limit, Type: UniformInteger, Range: [1, 50], Default: 8
+    maintenance_work_mem, Type: UniformInteger, Range: [1024, 1048576], Default: 65536
+    max_connections, Type: UniformInteger, Range: [5, 10000], Default: 100
+    max_files_per_process, Type: UniformInteger, Range: [25, 50000], Default: 1000
+    max_locks_per_transaction, Type: UniformInteger, Range: [10, 1024], Default: 64
+    max_parallel_workers_per_gather, Type: UniformInteger, Range: [0, 256], Default: 0
+    max_pred_locks_per_transaction, Type: UniformInteger, Range: [10, 1024], Default: 64
+    max_prepared_transactions, Type: UniformInteger, Range: [0, 1024], Default: 0
+    max_stack_depth, Type: UniformInteger, Range: [100, 7680], Default: 100
+    max_wal_size, Type: UniformInteger, Range: [2, 256], Default: 64
+    max_worker_processes, Type: UniformInteger, Range: [0, 256], Default: 8
+    min_parallel_relation_size, Type: UniformInteger, Range: [0, 131072], Default: 1024
+    min_wal_size, Type: UniformInteger, Range: [2, 16], Default: 5
+    old_snapshot_threshold, Type: UniformInteger, Range: [-1, 86400], Default: -1
+    parallel_setup_cost, Type: UniformFloat, Range: [0.0, 2500.0], Default: 1000.0
+    parallel_tuple_cost, Type: UniformFloat, Range: [0.0, 4.0], Default: 0.1
+    quote_all_identifiers, Type: Categorical, Choices: {on, off}, Default: off
+    random_page_cost, Type: UniformFloat, Range: [0.0, 8.0], Default: 4.0
+    replacement_sort_tuples, Type: UniformInteger, Range: [0, 2147483647], Default: 150000
+    seq_page_cost, Type: UniformFloat, Range: [0.0, 4.0], Default: 1.0
+    shared_buffers, Type: UniformInteger, Range: [16, 1048576], Default: 1024
+    temp_buffers, Type: UniformInteger, Range: [100, 65536], Default: 1024
+    temp_file_limit, Type: UniformInteger, Range: [-1, 20971520], Default: -1
+    vacuum_cost_delay, Type: UniformInteger, Range: [0, 100], Default: 0
+    vacuum_cost_limit, Type: UniformInteger, Range: [1, 10000], Default: 200
+    vacuum_cost_page_dirty, Type: UniformInteger, Range: [0, 10000], Default: 20
+    vacuum_cost_page_hit, Type: UniformInteger, Range: [0, 10000], Default: 1
+    vacuum_cost_page_miss, Type: UniformInteger, Range: [0, 10000], Default: 10
+    vacuum_freeze_min_age, Type: UniformInteger, Range: [0, 1000000000], Default: 50000000
+    vacuum_freeze_table_age, Type: UniformInteger, Range: [0, 2000000000], Default: 150000000
+    vacuum_multixact_freeze_min_age, Type: UniformInteger, Range: [0, 1000000000], Default: 5000000
+    vacuum_multixact_freeze_table_age, Type: UniformInteger, Range: [0, 2000000000], Default: 150000000
+    wal_buffers, Type: UniformInteger, Range: [-1, 65536], Default: -1
+    wal_compression, Type: Categorical, Choices: {on, off}, Default: off
+    wal_log_hints, Type: Categorical, Choices: {on, off}, Default: off
+    wal_writer_delay, Type: UniformInteger, Range: [1, 4096], Default: 200
+    wal_writer_flush_after, Type: UniformInteger, Range: [0, 32768], Default: 128
+    work_mem, Type: UniformInteger, Range: [64, 262144], Default: 4096
+
+Output to results/ycsb.workloada/seed1
+Optimizing a deterministic scenario for quality without a tuner timeout - will make SMAC deterministic and only evaluate one configuration per iteration!
+Running initial design for 10 configurations
+<class 'smac.facade.smac_hpo_facade.SMAC4HPO'>
+<smac.facade.smac_hpo_facade.SMAC4HPO object at 0x7f462102cfd0>
+Evaluating Default Configuration
+
+
+========================= Iteration  0 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 0.1
+  autovacuum_analyze_threshold, Value: 50
+  autovacuum_freeze_max_age, Value: 200000000
+  autovacuum_max_workers, Value: 3
+  autovacuum_multixact_freeze_max_age, Value: 400000000
+  autovacuum_naptime, Value: 60
+  autovacuum_vacuum_cost_delay, Value: 20
+  autovacuum_vacuum_cost_limit, Value: -1
+  autovacuum_vacuum_scale_factor, Value: 0.2
+  autovacuum_vacuum_threshold, Value: 50
+  autovacuum_work_mem, Value: -1
+  backend_flush_after, Value: 0
+  bgwriter_delay, Value: 200
+  bgwriter_flush_after, Value: 64
+  bgwriter_lru_maxpages, Value: 100
+  bgwriter_lru_multiplier, Value: 2.0
+  checkpoint_completion_target, Value: 0.5
+  checkpoint_flush_after, Value: 32
+  checkpoint_timeout, Value: 300
+  commit_delay, Value: 0
+  commit_siblings, Value: 5
+  cpu_index_tuple_cost, Value: 0.005
+  cpu_operator_cost, Value: 0.0025
+  cpu_tuple_cost, Value: 0.01
+  cursor_tuple_fraction, Value: 0.1
+  data_sync_retry, Value: 'off'
+  deadlock_timeout, Value: 1000
+  default_statistics_target, Value: 100
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 524288
+  effective_io_concurrency, Value: 1
+  enable_bitmapscan, Value: 'on'
+  enable_hashagg, Value: 'on'
+  enable_hashjoin, Value: 'on'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'on'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'on'
+  from_collapse_limit, Value: 8
+  full_page_writes, Value: 'on'
+  geqo, Value: 'on'
+  geqo_effort, Value: 5
+  geqo_generations, Value: 0
+  geqo_pool_size, Value: 0
+  geqo_seed, Value: 0.0
+  geqo_selection_bias, Value: 2.0
+  geqo_threshold, Value: 12
+  join_collapse_limit, Value: 8
+  maintenance_work_mem, Value: 65536
+  max_connections, Value: 100
+  max_files_per_process, Value: 1000
+  max_locks_per_transaction, Value: 64
+  max_parallel_workers_per_gather, Value: 0
+  max_pred_locks_per_transaction, Value: 64
+  max_prepared_transactions, Value: 0
+  max_stack_depth, Value: 100
+  max_wal_size, Value: 64
+  max_worker_processes, Value: 8
+  min_parallel_relation_size, Value: 1024
+  min_wal_size, Value: 5
+  old_snapshot_threshold, Value: -1
+  parallel_setup_cost, Value: 1000.0
+  parallel_tuple_cost, Value: 0.1
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 4.0
+  replacement_sort_tuples, Value: 150000
+  seq_page_cost, Value: 1.0
+  shared_buffers, Value: 1024
+  temp_buffers, Value: 1024
+  temp_file_limit, Value: -1
+  vacuum_cost_delay, Value: 0
+  vacuum_cost_limit, Value: 200
+  vacuum_cost_page_dirty, Value: 20
+  vacuum_cost_page_hit, Value: 1
+  vacuum_cost_page_miss, Value: 10
+  vacuum_freeze_min_age, Value: 50000000
+  vacuum_freeze_table_age, Value: 150000000
+  vacuum_multixact_freeze_min_age, Value: 5000000
+  vacuum_multixact_freeze_table_age, Value: 150000000
+  wal_buffers, Value: -1
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 200
+  wal_writer_flush_after, Value: 128
+  work_mem, Value: 4096
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 0.1, 'autovacuum_analyze_threshold': 50, 'autovacuum_freeze_max_age': 200000000, 'autovacuum_max_workers': 3, 'autovacuum_multixact_freeze_max_age': 400000000, 'autovacuum_naptime': 60, 'autovacuum_vacuum_cost_delay': 20, 'autovacuum_vacuum_cost_limit': -1, 'autovacuum_vacuum_scale_factor': 0.2, 'autovacuum_vacuum_threshold': 50, 'autovacuum_work_mem': -1, 'backend_flush_after': 0, 'bgwriter_delay': 200, 'bgwriter_flush_after': 64, 'bgwriter_lru_maxpages': 100, 'bgwriter_lru_multiplier': 2.0, 'checkpoint_completion_target': 0.5, 'checkpoint_flush_after': 32, 'checkpoint_timeout': 300, 'commit_delay': 0, 'commit_siblings': 5, 'cpu_index_tuple_cost': 0.01, 'cpu_operator_cost': 0.0, 'cpu_tuple_cost': 0.01, 'cursor_tuple_fraction': 0.1, 'data_sync_retry': 'off', 'deadlock_timeout': 1000, 'default_statistics_target': 100, 'default_transaction_deferrable': 'off', 'effective_cache_size': 524288, 'effective_io_concurrency': 1, 'enable_bitmapscan': 'on', 'enable_hashagg': 'on', 'enable_hashjoin': 'on', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'on', 'enable_material': 'on', 'enable_mergejoin': 'on', 'enable_nestloop': 'on', 'enable_seqscan': 'on', 'enable_sort': 'on', 'enable_tidscan': 'on', 'from_collapse_limit': 8, 'full_page_writes': 'on', 'geqo': 'on', 'geqo_effort': 5, 'geqo_generations': 0, 'geqo_pool_size': 0, 'geqo_seed': 0.0, 'geqo_selection_bias': 2.0, 'geqo_threshold': 12, 'join_collapse_limit': 8, 'maintenance_work_mem': 65536, 'max_connections': 100, 'max_files_per_process': 1000, 'max_locks_per_transaction': 64, 'max_parallel_workers_per_gather': 0, 'max_pred_locks_per_transaction': 64, 'max_prepared_transactions': 0, 'max_stack_depth': 100, 'max_wal_size': 64, 'max_worker_processes': 8, 'min_parallel_relation_size': 1024, 'min_wal_size': 5, 'old_snapshot_threshold': -1, 'parallel_setup_cost': 1000.0, 'parallel_tuple_cost': 0.1, 'quote_all_identifiers': 'off', 'random_page_cost': 4.0, 'replacement_sort_tuples': 150000, 'seq_page_cost': 1.0, 'shared_buffers': 1024, 'temp_buffers': 1024, 'temp_file_limit': -1, 'vacuum_cost_delay': 0, 'vacuum_cost_limit': 200, 'vacuum_cost_page_dirty': 20, 'vacuum_cost_page_hit': 1, 'vacuum_cost_page_miss': 10, 'vacuum_freeze_min_age': 50000000, 'vacuum_freeze_table_age': 150000000, 'vacuum_multixact_freeze_min_age': 5000000, 'vacuum_multixact_freeze_table_age': 150000000, 'wal_buffers': -1, 'wal_compression': 'off', 'wal_log_hints': 'off', 'wal_writer_delay': 200, 'wal_writer_flush_after': 128, 'work_mem': 4096}
+Performance Statistics:
+{'throughput': 3201.0, 'latency': 2033.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 3201.0 ops/sec
+Running initial design
+First run, no incumbent provided; challenger is assumed to be the incumbent
+
+
+========================= Iteration  1 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 39.840721149514835
+  autovacuum_analyze_threshold, Value: 423
+  autovacuum_freeze_max_age, Value: 1137928421
+  autovacuum_max_workers, Value: 9865
+  autovacuum_multixact_freeze_max_age, Value: 501682190
+  autovacuum_naptime, Value: 179914
+  autovacuum_vacuum_cost_delay, Value: 79
+  autovacuum_vacuum_cost_limit, Value: 7140
+  autovacuum_vacuum_scale_factor, Value: 50.512112558630776
+  autovacuum_vacuum_threshold, Value: 1036745380
+  autovacuum_work_mem, Value: 241078
+  backend_flush_after, Value: 41
+  bgwriter_delay, Value: 1511
+  bgwriter_flush_after, Value: 224
+  bgwriter_lru_maxpages, Value: 710
+  bgwriter_lru_multiplier, Value: 3.9684511106415465
+  checkpoint_completion_target, Value: 0.6307357933221851
+  checkpoint_flush_after, Value: 37
+  checkpoint_timeout, Value: 51380
+  commit_delay, Value: 1210
+  commit_siblings, Value: 9
+  cpu_index_tuple_cost, Value: 1.7931577158789112
+  cpu_operator_cost, Value: 0.417550540642205
+  cpu_tuple_cost, Value: 2.000874954706705
+  cursor_tuple_fraction, Value: 0.565098284033256
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 2403
+  default_statistics_target, Value: 4100
+  default_transaction_deferrable, Value: 'on'
+  effective_cache_size, Value: 1515239
+  effective_io_concurrency, Value: 165
+  enable_bitmapscan, Value: 'on'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'on'
+  enable_material, Value: 'off'
+  enable_mergejoin, Value: 'off'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'off'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'on'
+  from_collapse_limit, Value: 34
+  full_page_writes, Value: 'on'
+  geqo, Value: 'off'
+  geqo_effort, Value: 6
+  geqo_generations, Value: 769
+  geqo_pool_size, Value: 774
+  geqo_seed, Value: 0.4334145502255084
+  geqo_selection_bias, Value: 1.8527977503494228
+  geqo_threshold, Value: 17
+  join_collapse_limit, Value: 11
+  maintenance_work_mem, Value: 963228
+  max_connections, Value: 3370
+  max_files_per_process, Value: 4584
+  max_locks_per_transaction, Value: 231
+  max_parallel_workers_per_gather, Value: 123
+  max_pred_locks_per_transaction, Value: 1000
+  max_prepared_transactions, Value: 336
+  max_stack_depth, Value: 904
+  max_wal_size, Value: 240
+  max_worker_processes, Value: 129
+  min_parallel_relation_size, Value: 2580
+  min_wal_size, Value: 13
+  old_snapshot_threshold, Value: 6649
+  parallel_setup_cost, Value: 1957.9604286866424
+  parallel_tuple_cost, Value: 3.260321293160249
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 3.949971690623953
+  replacement_sort_tuples, Value: 1935771376
+  seq_page_cost, Value: 0.6241110283938495
+  shared_buffers, Value: 52147
+  temp_buffers, Value: 40725
+  temp_file_limit, Value: 14261387
+  vacuum_cost_delay, Value: 80
+  vacuum_cost_limit, Value: 7490
+  vacuum_cost_page_dirty, Value: 3568
+  vacuum_cost_page_hit, Value: 783
+  vacuum_cost_page_miss, Value: 6206
+  vacuum_freeze_min_age, Value: 311915929
+  vacuum_freeze_table_age, Value: 178773595
+  vacuum_multixact_freeze_min_age, Value: 485722870
+  vacuum_multixact_freeze_table_age, Value: 1197874334
+  wal_buffers, Value: 26550
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'on'
+  wal_writer_delay, Value: 2593
+  wal_writer_flush_after, Value: 4567
+  work_mem, Value: 167222
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 39.84, 'autovacuum_analyze_threshold': 423, 'autovacuum_freeze_max_age': 1137928421, 'autovacuum_max_workers': 9865, 'autovacuum_multixact_freeze_max_age': 501682190, 'autovacuum_naptime': 179914, 'autovacuum_vacuum_cost_delay': 79, 'autovacuum_vacuum_cost_limit': 7140, 'autovacuum_vacuum_scale_factor': 50.51, 'autovacuum_vacuum_threshold': 1036745380, 'autovacuum_work_mem': 241078, 'backend_flush_after': 41, 'bgwriter_delay': 1511, 'bgwriter_flush_after': 224, 'bgwriter_lru_maxpages': 710, 'bgwriter_lru_multiplier': 3.97, 'checkpoint_completion_target': 0.63, 'checkpoint_flush_after': 37, 'checkpoint_timeout': 51380, 'commit_delay': 1210, 'commit_siblings': 9, 'cpu_index_tuple_cost': 1.79, 'cpu_operator_cost': 0.42, 'cpu_tuple_cost': 2.0, 'cursor_tuple_fraction': 0.57, 'data_sync_retry': 'on', 'deadlock_timeout': 2403, 'default_statistics_target': 4100, 'default_transaction_deferrable': 'on', 'effective_cache_size': 1515239, 'effective_io_concurrency': 165, 'enable_bitmapscan': 'on', 'enable_hashagg': 'off', 'enable_hashjoin': 'off', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'on', 'enable_material': 'off', 'enable_mergejoin': 'off', 'enable_nestloop': 'on', 'enable_seqscan': 'off', 'enable_sort': 'on', 'enable_tidscan': 'on', 'from_collapse_limit': 34, 'full_page_writes': 'on', 'geqo': 'off', 'geqo_effort': 6, 'geqo_generations': 769, 'geqo_pool_size': 774, 'geqo_seed': 0.43, 'geqo_selection_bias': 1.85, 'geqo_threshold': 17, 'join_collapse_limit': 11, 'maintenance_work_mem': 963228, 'max_connections': 3370, 'max_files_per_process': 4584, 'max_locks_per_transaction': 231, 'max_parallel_workers_per_gather': 123, 'max_pred_locks_per_transaction': 1000, 'max_prepared_transactions': 336, 'max_stack_depth': 904, 'max_wal_size': 240, 'max_worker_processes': 129, 'min_parallel_relation_size': 2580, 'min_wal_size': 13, 'old_snapshot_threshold': 6649, 'parallel_setup_cost': 1957.96, 'parallel_tuple_cost': 3.26, 'quote_all_identifiers': 'off', 'random_page_cost': 3.95, 'replacement_sort_tuples': 1935771376, 'seq_page_cost': 0.62, 'shared_buffers': 52147, 'temp_buffers': 40725, 'temp_file_limit': 14261387, 'vacuum_cost_delay': 80, 'vacuum_cost_limit': 7490, 'vacuum_cost_page_dirty': 3568, 'vacuum_cost_page_hit': 783, 'vacuum_cost_page_miss': 6206, 'vacuum_freeze_min_age': 311915929, 'vacuum_freeze_table_age': 178773595, 'vacuum_multixact_freeze_min_age': 485722870, 'vacuum_multixact_freeze_table_age': 1197874334, 'wal_buffers': 26550, 'wal_compression': 'off', 'wal_log_hints': 'on', 'wal_writer_delay': 2593, 'wal_writer_flush_after': 4567, 'work_mem': 167222}
+Performance Statistics:
+{'throughput': 5179.0, 'latency': 2931.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 5179.0 ops/sec
+First run, no incumbent provided; challenger is assumed to be the incumbent
+Updated estimated cost of incumbent on 1 runs: -5179.0000
+
+
+========================= Iteration  2 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'off'
+  autovacuum_analyze_scale_factor, Value: 95.03215743162382
+  autovacuum_analyze_threshold, Value: 220
+  autovacuum_freeze_max_age, Value: 194587109
+  autovacuum_max_workers, Value: 5384
+  autovacuum_multixact_freeze_max_age, Value: 661147550
+  autovacuum_naptime, Value: 597896
+  autovacuum_vacuum_cost_delay, Value: 46
+  autovacuum_vacuum_cost_limit, Value: 5934
+  autovacuum_vacuum_scale_factor, Value: 17.700161389053267
+  autovacuum_vacuum_threshold, Value: 1340769837
+  autovacuum_work_mem, Value: 20318
+  backend_flush_after, Value: 100
+  bgwriter_delay, Value: 3290
+  bgwriter_flush_after, Value: 162
+  bgwriter_lru_maxpages, Value: 807
+  bgwriter_lru_multiplier, Value: 2.904118083153543
+  checkpoint_completion_target, Value: 0.3528905674947368
+  checkpoint_flush_after, Value: 66
+  checkpoint_timeout, Value: 3614
+  commit_delay, Value: 753
+  commit_siblings, Value: 3
+  cpu_index_tuple_cost, Value: 0.26647893652643073
+  cpu_operator_cost, Value: 0.9422268327217165
+  cpu_tuple_cost, Value: 3.0352510016996077
+  cursor_tuple_fraction, Value: 0.9343240116592529
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 527
+  default_statistics_target, Value: 3648
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 312695
+  effective_io_concurrency, Value: 442
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'off'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'off'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 49
+  full_page_writes, Value: 'on'
+  geqo, Value: 'off'
+  geqo_effort, Value: 5
+  geqo_generations, Value: 267
+  geqo_pool_size, Value: 915
+  geqo_seed, Value: 0.034203197574196986
+  geqo_selection_bias, Value: 1.6056832426386431
+  geqo_threshold, Value: 45
+  join_collapse_limit, Value: 42
+  maintenance_work_mem, Value: 531834
+  max_connections, Value: 4073
+  max_files_per_process, Value: 32640
+  max_locks_per_transaction, Value: 938
+  max_parallel_workers_per_gather, Value: 33
+  max_pred_locks_per_transaction, Value: 875
+  max_prepared_transactions, Value: 740
+  max_stack_depth, Value: 2547
+  max_wal_size, Value: 97
+  max_worker_processes, Value: 43
+  min_parallel_relation_size, Value: 40381
+  min_wal_size, Value: 14
+  old_snapshot_threshold, Value: 27768
+  parallel_setup_cost, Value: 532.9508644044247
+  parallel_tuple_cost, Value: 2.2180983129587855
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 0.04816338709326882
+  replacement_sort_tuples, Value: 93834483
+  seq_page_cost, Value: 0.09545975469760401
+  shared_buffers, Value: 993678
+  temp_buffers, Value: 64016
+  temp_file_limit, Value: 15812080
+  vacuum_cost_delay, Value: 100
+  vacuum_cost_limit, Value: 8182
+  vacuum_cost_page_dirty, Value: 7525
+  vacuum_cost_page_hit, Value: 2927
+  vacuum_cost_page_miss, Value: 8010
+  vacuum_freeze_min_age, Value: 964663942
+  vacuum_freeze_table_age, Value: 1088545316
+  vacuum_multixact_freeze_min_age, Value: 153015556
+  vacuum_multixact_freeze_table_age, Value: 45336794
+  wal_buffers, Value: 40929
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 422
+  wal_writer_flush_after, Value: 7319
+  work_mem, Value: 40075
+
+Evaluating Configuration:
+{'autovacuum': 'off', 'autovacuum_analyze_scale_factor': 95.03, 'autovacuum_analyze_threshold': 220, 'autovacuum_freeze_max_age': 194587109, 'autovacuum_max_workers': 5384, 'autovacuum_multixact_freeze_max_age': 661147550, 'autovacuum_naptime': 597896, 'autovacuum_vacuum_cost_delay': 46, 'autovacuum_vacuum_cost_limit': 5934, 'autovacuum_vacuum_scale_factor': 17.7, 'autovacuum_vacuum_threshold': 1340769837, 'autovacuum_work_mem': 20318, 'backend_flush_after': 100, 'bgwriter_delay': 3290, 'bgwriter_flush_after': 162, 'bgwriter_lru_maxpages': 807, 'bgwriter_lru_multiplier': 2.9, 'checkpoint_completion_target': 0.35, 'checkpoint_flush_after': 66, 'checkpoint_timeout': 3614, 'commit_delay': 753, 'commit_siblings': 3, 'cpu_index_tuple_cost': 0.27, 'cpu_operator_cost': 0.94, 'cpu_tuple_cost': 3.04, 'cursor_tuple_fraction': 0.93, 'data_sync_retry': 'on', 'deadlock_timeout': 527, 'default_statistics_target': 3648, 'default_transaction_deferrable': 'off', 'effective_cache_size': 312695, 'effective_io_concurrency': 442, 'enable_bitmapscan': 'off', 'enable_hashagg': 'off', 'enable_hashjoin': 'off', 'enable_indexonlyscan': 'off', 'enable_indexscan': 'off', 'enable_material': 'off', 'enable_mergejoin': 'on', 'enable_nestloop': 'on', 'enable_seqscan': 'on', 'enable_sort': 'on', 'enable_tidscan': 'off', 'from_collapse_limit': 49, 'full_page_writes': 'on', 'geqo': 'off', 'geqo_effort': 5, 'geqo_generations': 267, 'geqo_pool_size': 915, 'geqo_seed': 0.03, 'geqo_selection_bias': 1.61, 'geqo_threshold': 45, 'join_collapse_limit': 42, 'maintenance_work_mem': 531834, 'max_connections': 4073, 'max_files_per_process': 32640, 'max_locks_per_transaction': 938, 'max_parallel_workers_per_gather': 33, 'max_pred_locks_per_transaction': 875, 'max_prepared_transactions': 740, 'max_stack_depth': 2547, 'max_wal_size': 97, 'max_worker_processes': 43, 'min_parallel_relation_size': 40381, 'min_wal_size': 14, 'old_snapshot_threshold': 27768, 'parallel_setup_cost': 532.95, 'parallel_tuple_cost': 2.22, 'quote_all_identifiers': 'off', 'random_page_cost': 0.05, 'replacement_sort_tuples': 93834483, 'seq_page_cost': 0.1, 'shared_buffers': 993678, 'temp_buffers': 64016, 'temp_file_limit': 15812080, 'vacuum_cost_delay': 100, 'vacuum_cost_limit': 8182, 'vacuum_cost_page_dirty': 7525, 'vacuum_cost_page_hit': 2927, 'vacuum_cost_page_miss': 8010, 'vacuum_freeze_min_age': 964663942, 'vacuum_freeze_table_age': 1088545316, 'vacuum_multixact_freeze_min_age': 153015556, 'vacuum_multixact_freeze_table_age': 45336794, 'wal_buffers': 40929, 'wal_compression': 'off', 'wal_log_hints': 'off', 'wal_writer_delay': 422, 'wal_writer_flush_after': 7319, 'work_mem': 40075}
+Performance Statistics:
+{'throughput': 9117.0, 'latency': 8364.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 9117.0 ops/sec
+Challenger (-9117.0000) is better than incumbent (-5179.0000) on 1 runs.
+Changes in incumbent:
+  autovacuum : 'on' -> 'off'
+  autovacuum_analyze_scale_factor : 39.840721149514835 -> 95.03215743162382
+  autovacuum_analyze_threshold : 423 -> 220
+  autovacuum_freeze_max_age : 1137928421 -> 194587109
+  autovacuum_max_workers : 9865 -> 5384
+  autovacuum_multixact_freeze_max_age : 501682190 -> 661147550
+  autovacuum_naptime : 179914 -> 597896
+  autovacuum_vacuum_cost_delay : 79 -> 46
+  autovacuum_vacuum_cost_limit : 7140 -> 5934
+  autovacuum_vacuum_scale_factor : 50.512112558630776 -> 17.700161389053267
+  autovacuum_vacuum_threshold : 1036745380 -> 1340769837
+  autovacuum_work_mem : 241078 -> 20318
+  backend_flush_after : 41 -> 100
+  bgwriter_delay : 1511 -> 3290
+  bgwriter_flush_after : 224 -> 162
+  bgwriter_lru_maxpages : 710 -> 807
+  bgwriter_lru_multiplier : 3.9684511106415465 -> 2.904118083153543
+  checkpoint_completion_target : 0.6307357933221851 -> 0.3528905674947368
+  checkpoint_flush_after : 37 -> 66
+  checkpoint_timeout : 51380 -> 3614
+  commit_delay : 1210 -> 753
+  commit_siblings : 9 -> 3
+  cpu_index_tuple_cost : 1.7931577158789112 -> 0.26647893652643073
+  cpu_operator_cost : 0.417550540642205 -> 0.9422268327217165
+  cpu_tuple_cost : 2.000874954706705 -> 3.0352510016996077
+  cursor_tuple_fraction : 0.565098284033256 -> 0.9343240116592529
+  deadlock_timeout : 2403 -> 527
+  default_statistics_target : 4100 -> 3648
+  default_transaction_deferrable : 'on' -> 'off'
+  effective_cache_size : 1515239 -> 312695
+  effective_io_concurrency : 165 -> 442
+  enable_bitmapscan : 'on' -> 'off'
+  enable_indexonlyscan : 'on' -> 'off'
+  enable_indexscan : 'on' -> 'off'
+  enable_mergejoin : 'off' -> 'on'
+  enable_seqscan : 'off' -> 'on'
+  enable_tidscan : 'on' -> 'off'
+  from_collapse_limit : 34 -> 49
+  geqo_effort : 6 -> 5
+  geqo_generations : 769 -> 267
+  geqo_pool_size : 774 -> 915
+  geqo_seed : 0.4334145502255084 -> 0.034203197574196986
+  geqo_selection_bias : 1.8527977503494228 -> 1.6056832426386431
+  geqo_threshold : 17 -> 45
+  join_collapse_limit : 11 -> 42
+  maintenance_work_mem : 963228 -> 531834
+  max_connections : 3370 -> 4073
+  max_files_per_process : 4584 -> 32640
+  max_locks_per_transaction : 231 -> 938
+  max_parallel_workers_per_gather : 123 -> 33
+  max_pred_locks_per_transaction : 1000 -> 875
+  max_prepared_transactions : 336 -> 740
+  max_stack_depth : 904 -> 2547
+  max_wal_size : 240 -> 97
+  max_worker_processes : 129 -> 43
+  min_parallel_relation_size : 2580 -> 40381
+  min_wal_size : 13 -> 14
+  old_snapshot_threshold : 6649 -> 27768
+  parallel_setup_cost : 1957.9604286866424 -> 532.9508644044247
+  parallel_tuple_cost : 3.260321293160249 -> 2.2180983129587855
+  random_page_cost : 3.949971690623953 -> 0.04816338709326882
+  replacement_sort_tuples : 1935771376 -> 93834483
+  seq_page_cost : 0.6241110283938495 -> 0.09545975469760401
+  shared_buffers : 52147 -> 993678
+  temp_buffers : 40725 -> 64016
+  temp_file_limit : 14261387 -> 15812080
+  vacuum_cost_delay : 80 -> 100
+  vacuum_cost_limit : 7490 -> 8182
+  vacuum_cost_page_dirty : 3568 -> 7525
+  vacuum_cost_page_hit : 783 -> 2927
+  vacuum_cost_page_miss : 6206 -> 8010
+  vacuum_freeze_min_age : 311915929 -> 964663942
+  vacuum_freeze_table_age : 178773595 -> 1088545316
+  vacuum_multixact_freeze_min_age : 485722870 -> 153015556
+  vacuum_multixact_freeze_table_age : 1197874334 -> 45336794
+  wal_buffers : 26550 -> 40929
+  wal_log_hints : 'on' -> 'off'
+  wal_writer_delay : 2593 -> 422
+  wal_writer_flush_after : 4567 -> 7319
+  work_mem : 167222 -> 40075
+
+
+========================= Iteration  3 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 0.1
+  autovacuum_analyze_threshold, Value: 50
+  autovacuum_freeze_max_age, Value: 200000000
+  autovacuum_max_workers, Value: 3
+  autovacuum_multixact_freeze_max_age, Value: 400000000
+  autovacuum_naptime, Value: 60
+  autovacuum_vacuum_cost_delay, Value: 20
+  autovacuum_vacuum_cost_limit, Value: -1
+  autovacuum_vacuum_scale_factor, Value: 0.2
+  autovacuum_vacuum_threshold, Value: 50
+  autovacuum_work_mem, Value: -1
+  backend_flush_after, Value: 0
+  bgwriter_delay, Value: 200
+  bgwriter_flush_after, Value: 64
+  bgwriter_lru_maxpages, Value: 100
+  bgwriter_lru_multiplier, Value: 2.0
+  checkpoint_completion_target, Value: 0.5
+  checkpoint_flush_after, Value: 32
+  checkpoint_timeout, Value: 300
+  commit_delay, Value: 0
+  commit_siblings, Value: 5
+  cpu_index_tuple_cost, Value: 0.005
+  cpu_operator_cost, Value: 0.0025
+  cpu_tuple_cost, Value: 0.01
+  cursor_tuple_fraction, Value: 0.1
+  data_sync_retry, Value: 'off'
+  deadlock_timeout, Value: 1000
+  default_statistics_target, Value: 100
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 524288
+  effective_io_concurrency, Value: 1
+  enable_bitmapscan, Value: 'on'
+  enable_hashagg, Value: 'on'
+  enable_hashjoin, Value: 'on'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'on'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'on'
+  from_collapse_limit, Value: 8
+  full_page_writes, Value: 'on'
+  geqo, Value: 'on'
+  geqo_effort, Value: 5
+  geqo_generations, Value: 0
+  geqo_pool_size, Value: 0
+  geqo_seed, Value: 0.0
+  geqo_selection_bias, Value: 2.0
+  geqo_threshold, Value: 12
+  join_collapse_limit, Value: 8
+  maintenance_work_mem, Value: 65536
+  max_connections, Value: 100
+  max_files_per_process, Value: 1000
+  max_locks_per_transaction, Value: 64
+  max_parallel_workers_per_gather, Value: 0
+  max_pred_locks_per_transaction, Value: 64
+  max_prepared_transactions, Value: 0
+  max_stack_depth, Value: 100
+  max_wal_size, Value: 64
+  max_worker_processes, Value: 8
+  min_parallel_relation_size, Value: 1024
+  min_wal_size, Value: 5
+  old_snapshot_threshold, Value: -1
+  parallel_setup_cost, Value: 1000.0
+  parallel_tuple_cost, Value: 0.1
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 4.0
+  replacement_sort_tuples, Value: 150000
+  seq_page_cost, Value: 1.0
+  shared_buffers, Value: 1024
+  temp_buffers, Value: 1024
+  temp_file_limit, Value: -1
+  vacuum_cost_delay, Value: 0
+  vacuum_cost_limit, Value: 200
+  vacuum_cost_page_dirty, Value: 20
+  vacuum_cost_page_hit, Value: 1
+  vacuum_cost_page_miss, Value: 10
+  vacuum_freeze_min_age, Value: 50000000
+  vacuum_freeze_table_age, Value: 150000000
+  vacuum_multixact_freeze_min_age, Value: 5000000
+  vacuum_multixact_freeze_table_age, Value: 150000000
+  wal_buffers, Value: -1
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 200
+  wal_writer_flush_after, Value: 128
+  work_mem, Value: 4096
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 0.1, 'autovacuum_analyze_threshold': 50, 'autovacuum_freeze_max_age': 200000000, 'autovacuum_max_workers': 3, 'autovacuum_multixact_freeze_max_age': 400000000, 'autovacuum_naptime': 60, 'autovacuum_vacuum_cost_delay': 20, 'autovacuum_vacuum_cost_limit': -1, 'autovacuum_vacuum_scale_factor': 0.2, 'autovacuum_vacuum_threshold': 50, 'autovacuum_work_mem': -1, 'backend_flush_after': 0, 'bgwriter_delay': 200, 'bgwriter_flush_after': 64, 'bgwriter_lru_maxpages': 100, 'bgwriter_lru_multiplier': 2.0, 'checkpoint_completion_target': 0.5, 'checkpoint_flush_after': 32, 'checkpoint_timeout': 300, 'commit_delay': 0, 'commit_siblings': 5, 'cpu_index_tuple_cost': 0.01, 'cpu_operator_cost': 0.0, 'cpu_tuple_cost': 0.01, 'cursor_tuple_fraction': 0.1, 'data_sync_retry': 'off', 'deadlock_timeout': 1000, 'default_statistics_target': 100, 'default_transaction_deferrable': 'off', 'effective_cache_size': 524288, 'effective_io_concurrency': 1, 'enable_bitmapscan': 'on', 'enable_hashagg': 'on', 'enable_hashjoin': 'on', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'on', 'enable_material': 'on', 'enable_mergejoin': 'on', 'enable_nestloop': 'on', 'enable_seqscan': 'on', 'enable_sort': 'on', 'enable_tidscan': 'on', 'from_collapse_limit': 8, 'full_page_writes': 'on', 'geqo': 'on', 'geqo_effort': 5, 'geqo_generations': 0, 'geqo_pool_size': 0, 'geqo_seed': 0.0, 'geqo_selection_bias': 2.0, 'geqo_threshold': 12, 'join_collapse_limit': 8, 'maintenance_work_mem': 65536, 'max_connections': 100, 'max_files_per_process': 1000, 'max_locks_per_transaction': 64, 'max_parallel_workers_per_gather': 0, 'max_pred_locks_per_transaction': 64, 'max_prepared_transactions': 0, 'max_stack_depth': 100, 'max_wal_size': 64, 'max_worker_processes': 8, 'min_parallel_relation_size': 1024, 'min_wal_size': 5, 'old_snapshot_threshold': -1, 'parallel_setup_cost': 1000.0, 'parallel_tuple_cost': 0.1, 'quote_all_identifiers': 'off', 'random_page_cost': 4.0, 'replacement_sort_tuples': 150000, 'seq_page_cost': 1.0, 'shared_buffers': 1024, 'temp_buffers': 1024, 'temp_file_limit': -1, 'vacuum_cost_delay': 0, 'vacuum_cost_limit': 200, 'vacuum_cost_page_dirty': 20, 'vacuum_cost_page_hit': 1, 'vacuum_cost_page_miss': 10, 'vacuum_freeze_min_age': 50000000, 'vacuum_freeze_table_age': 150000000, 'vacuum_multixact_freeze_min_age': 5000000, 'vacuum_multixact_freeze_table_age': 150000000, 'wal_buffers': -1, 'wal_compression': 'off', 'wal_log_hints': 'off', 'wal_writer_delay': 200, 'wal_writer_flush_after': 128, 'work_mem': 4096}
+Performance Statistics:
+{'throughput': 8737.0, 'latency': 7219.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 8737.0 ops/sec
+
+
+========================= Iteration  4 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'off'
+  autovacuum_analyze_scale_factor, Value: 49.8997782662243
+  autovacuum_analyze_threshold, Value: 532
+  autovacuum_freeze_max_age, Value: 929318845
+  autovacuum_max_workers, Value: 3267
+  autovacuum_multixact_freeze_max_age, Value: 1752844192
+  autovacuum_naptime, Value: 872289
+  autovacuum_vacuum_cost_delay, Value: 88
+  autovacuum_vacuum_cost_limit, Value: 1847
+  autovacuum_vacuum_scale_factor, Value: 46.59701329482708
+  autovacuum_vacuum_threshold, Value: 1562776945
+  autovacuum_work_mem, Value: 493972
+  backend_flush_after, Value: 112
+  bgwriter_delay, Value: 1046
+  bgwriter_flush_after, Value: 122
+  bgwriter_lru_maxpages, Value: 110
+  bgwriter_lru_multiplier, Value: 0.6573428200369098
+  checkpoint_completion_target, Value: 0.5054629792128787
+  checkpoint_flush_after, Value: 151
+  checkpoint_timeout, Value: 81439
+  commit_delay, Value: 26
+  commit_siblings, Value: 10
+  cpu_index_tuple_cost, Value: 2.9435534917138697
+  cpu_operator_cost, Value: 3.088126959303718
+  cpu_tuple_cost, Value: 3.6835840187964903
+  cursor_tuple_fraction, Value: 0.4485374990558729
+  data_sync_retry, Value: 'off'
+  deadlock_timeout, Value: 3660
+  default_statistics_target, Value: 3240
+  default_transaction_deferrable, Value: 'on'
+  effective_cache_size, Value: 1008678
+  effective_io_concurrency, Value: 13
+  enable_bitmapscan, Value: 'on'
+  enable_hashagg, Value: 'on'
+  enable_hashjoin, Value: 'on'
+  enable_indexonlyscan, Value: 'off'
+  enable_indexscan, Value: 'on'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'off'
+  enable_seqscan, Value: 'off'
+  enable_sort, Value: 'off'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 4
+  full_page_writes, Value: 'off'
+  geqo, Value: 'on'
+  geqo_effort, Value: 3
+  geqo_generations, Value: 871
+  geqo_pool_size, Value: 240
+  geqo_seed, Value: 0.7817935140603265
+  geqo_selection_bias, Value: 1.8014092402744417
+  geqo_threshold, Value: 47
+  join_collapse_limit, Value: 36
+  maintenance_work_mem, Value: 492421
+  max_connections, Value: 1166
+  max_files_per_process, Value: 24138
+  max_locks_per_transaction, Value: 578
+  max_parallel_workers_per_gather, Value: 91
+  max_pred_locks_per_transaction, Value: 715
+  max_prepared_transactions, Value: 172
+  max_stack_depth, Value: 4756
+  max_wal_size, Value: 114
+  max_worker_processes, Value: 230
+  min_parallel_relation_size, Value: 81443
+  min_wal_size, Value: 8
+  old_snapshot_threshold, Value: 61159
+  parallel_setup_cost, Value: 1660.1895734959674
+  parallel_tuple_cost, Value: 1.87933047761775
+  quote_all_identifiers, Value: 'on'
+  random_page_cost, Value: 0.9755396359485247
+  replacement_sort_tuples, Value: 1623291686
+  seq_page_cost, Value: 2.9951792090351974
+  shared_buffers, Value: 115502
+  temp_buffers, Value: 56576
+  temp_file_limit, Value: 9278339
+  vacuum_cost_delay, Value: 54
+  vacuum_cost_limit, Value: 6202
+  vacuum_cost_page_dirty, Value: 5215
+  vacuum_cost_page_hit, Value: 8012
+  vacuum_cost_page_miss, Value: 7116
+  vacuum_freeze_min_age, Value: 528561474
+  vacuum_freeze_table_age, Value: 731123115
+  vacuum_multixact_freeze_min_age, Value: 667419933
+  vacuum_multixact_freeze_table_age, Value: 1342514783
+  wal_buffers, Value: 15730
+  wal_compression, Value: 'on'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 1977
+  wal_writer_flush_after, Value: 29780
+  work_mem, Value: 117894
+
+Evaluating Configuration:
+{'autovacuum': 'off', 'autovacuum_analyze_scale_factor': 49.9, 'autovacuum_analyze_threshold': 532, 'autovacuum_freeze_max_age': 929318845, 'autovacuum_max_workers': 3267, 'autovacuum_multixact_freeze_max_age': 1752844192, 'autovacuum_naptime': 872289, 'autovacuum_vacuum_cost_delay': 88, 'autovacuum_vacuum_cost_limit': 1847, 'autovacuum_vacuum_scale_factor': 46.6, 'autovacuum_vacuum_threshold': 1562776945, 'autovacuum_work_mem': 493972, 'backend_flush_after': 112, 'bgwriter_delay': 1046, 'bgwriter_flush_after': 122, 'bgwriter_lru_maxpages': 110, 'bgwriter_lru_multiplier': 0.66, 'checkpoint_completion_target': 0.51, 'checkpoint_flush_after': 151, 'checkpoint_timeout': 81439, 'commit_delay': 26, 'commit_siblings': 10, 'cpu_index_tuple_cost': 2.94, 'cpu_operator_cost': 3.09, 'cpu_tuple_cost': 3.68, 'cursor_tuple_fraction': 0.45, 'data_sync_retry': 'off', 'deadlock_timeout': 3660, 'default_statistics_target': 3240, 'default_transaction_deferrable': 'on', 'effective_cache_size': 1008678, 'effective_io_concurrency': 13, 'enable_bitmapscan': 'on', 'enable_hashagg': 'on', 'enable_hashjoin': 'on', 'enable_indexonlyscan': 'off', 'enable_indexscan': 'on', 'enable_material': 'on', 'enable_mergejoin': 'on', 'enable_nestloop': 'off', 'enable_seqscan': 'off', 'enable_sort': 'off', 'enable_tidscan': 'off', 'from_collapse_limit': 4, 'full_page_writes': 'off', 'geqo': 'on', 'geqo_effort': 3, 'geqo_generations': 871, 'geqo_pool_size': 240, 'geqo_seed': 0.78, 'geqo_selection_bias': 1.8, 'geqo_threshold': 47, 'join_collapse_limit': 36, 'maintenance_work_mem': 492421, 'max_connections': 1166, 'max_files_per_process': 24138, 'max_locks_per_transaction': 578, 'max_parallel_workers_per_gather': 91, 'max_pred_locks_per_transaction': 715, 'max_prepared_transactions': 172, 'max_stack_depth': 4756, 'max_wal_size': 114, 'max_worker_processes': 230, 'min_parallel_relation_size': 81443, 'min_wal_size': 8, 'old_snapshot_threshold': 61159, 'parallel_setup_cost': 1660.19, 'parallel_tuple_cost': 1.88, 'quote_all_identifiers': 'on', 'random_page_cost': 0.98, 'replacement_sort_tuples': 1623291686, 'seq_page_cost': 3.0, 'shared_buffers': 115502, 'temp_buffers': 56576, 'temp_file_limit': 9278339, 'vacuum_cost_delay': 54, 'vacuum_cost_limit': 6202, 'vacuum_cost_page_dirty': 5215, 'vacuum_cost_page_hit': 8012, 'vacuum_cost_page_miss': 7116, 'vacuum_freeze_min_age': 528561474, 'vacuum_freeze_table_age': 731123115, 'vacuum_multixact_freeze_min_age': 667419933, 'vacuum_multixact_freeze_table_age': 1342514783, 'wal_buffers': 15730, 'wal_compression': 'on', 'wal_log_hints': 'off', 'wal_writer_delay': 1977, 'wal_writer_flush_after': 29780, 'work_mem': 117894}
+Performance Statistics:
+{'throughput': 4439.0, 'latency': 2537.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 4439.0 ops/sec
+
+
+========================= Iteration  5 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'off'
+  autovacuum_analyze_scale_factor, Value: 10.685360830464052
+  autovacuum_analyze_threshold, Value: 185
+  autovacuum_freeze_max_age, Value: 1368488384
+  autovacuum_max_workers, Value: 2794
+  autovacuum_multixact_freeze_max_age, Value: 1160778193
+  autovacuum_naptime, Value: 1365847
+  autovacuum_vacuum_cost_delay, Value: 95
+  autovacuum_vacuum_cost_limit, Value: 8285
+  autovacuum_vacuum_scale_factor, Value: 5.137724403740089
+  autovacuum_vacuum_threshold, Value: 668480939
+  autovacuum_work_mem, Value: 998326
+  backend_flush_after, Value: 185
+  bgwriter_delay, Value: 2139
+  bgwriter_flush_after, Value: 153
+  bgwriter_lru_maxpages, Value: 905
+  bgwriter_lru_multiplier, Value: 7.382902990530151
+  checkpoint_completion_target, Value: 0.4066128928217923
+  checkpoint_flush_after, Value: 172
+  checkpoint_timeout, Value: 9898
+  commit_delay, Value: 3600
+  commit_siblings, Value: 15
+  cpu_index_tuple_cost, Value: 3.2601637843000217
+  cpu_operator_cost, Value: 3.3408909692722575
+  cpu_tuple_cost, Value: 3.3133379440203257
+  cursor_tuple_fraction, Value: 0.01712468885104429
+  data_sync_retry, Value: 'off'
+  deadlock_timeout, Value: 417
+  default_statistics_target, Value: 1097
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 1384745
+  effective_io_concurrency, Value: 386
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'on'
+  enable_indexonlyscan, Value: 'off'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'off'
+  enable_nestloop, Value: 'off'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'on'
+  from_collapse_limit, Value: 7
+  full_page_writes, Value: 'off'
+  geqo, Value: 'on'
+  geqo_effort, Value: 9
+  geqo_generations, Value: 90
+  geqo_pool_size, Value: 683
+  geqo_seed, Value: 0.9652456126321123
+  geqo_selection_bias, Value: 1.6523997631580607
+  geqo_threshold, Value: 9
+  join_collapse_limit, Value: 16
+  maintenance_work_mem, Value: 797792
+  max_connections, Value: 9520
+  max_files_per_process, Value: 45246
+  max_locks_per_transaction, Value: 47
+  max_parallel_workers_per_gather, Value: 172
+  max_pred_locks_per_transaction, Value: 494
+  max_prepared_transactions, Value: 496
+  max_stack_depth, Value: 7204
+  max_wal_size, Value: 15
+  max_worker_processes, Value: 171
+  min_parallel_relation_size, Value: 119312
+  min_wal_size, Value: 11
+  old_snapshot_threshold, Value: 45739
+  parallel_setup_cost, Value: 1189.4232969189434
+  parallel_tuple_cost, Value: 0.8595803876796765
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 5.279686361370356
+  replacement_sort_tuples, Value: 1101851140
+  seq_page_cost, Value: 2.13069443421993
+  shared_buffers, Value: 725178
+  temp_buffers, Value: 35293
+  temp_file_limit, Value: 4134891
+  vacuum_cost_delay, Value: 14
+  vacuum_cost_limit, Value: 1371
+  vacuum_cost_page_dirty, Value: 8214
+  vacuum_cost_page_hit, Value: 3109
+  vacuum_cost_page_miss, Value: 4973
+  vacuum_freeze_min_age, Value: 231154538
+  vacuum_freeze_table_age, Value: 1280583730
+  vacuum_multixact_freeze_min_age, Value: 891715617
+  vacuum_multixact_freeze_table_age, Value: 1935763098
+  wal_buffers, Value: 35118
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'on'
+  wal_writer_delay, Value: 221
+  wal_writer_flush_after, Value: 28093
+  work_mem, Value: 232659
+
+Evaluating Configuration:
+{'autovacuum': 'off', 'autovacuum_analyze_scale_factor': 10.69, 'autovacuum_analyze_threshold': 185, 'autovacuum_freeze_max_age': 1368488384, 'autovacuum_max_workers': 2794, 'autovacuum_multixact_freeze_max_age': 1160778193, 'autovacuum_naptime': 1365847, 'autovacuum_vacuum_cost_delay': 95, 'autovacuum_vacuum_cost_limit': 8285, 'autovacuum_vacuum_scale_factor': 5.14, 'autovacuum_vacuum_threshold': 668480939, 'autovacuum_work_mem': 998326, 'backend_flush_after': 185, 'bgwriter_delay': 2139, 'bgwriter_flush_after': 153, 'bgwriter_lru_maxpages': 905, 'bgwriter_lru_multiplier': 7.38, 'checkpoint_completion_target': 0.41, 'checkpoint_flush_after': 172, 'checkpoint_timeout': 9898, 'commit_delay': 3600, 'commit_siblings': 15, 'cpu_index_tuple_cost': 3.26, 'cpu_operator_cost': 3.34, 'cpu_tuple_cost': 3.31, 'cursor_tuple_fraction': 0.02, 'data_sync_retry': 'off', 'deadlock_timeout': 417, 'default_statistics_target': 1097, 'default_transaction_deferrable': 'off', 'effective_cache_size': 1384745, 'effective_io_concurrency': 386, 'enable_bitmapscan': 'off', 'enable_hashagg': 'off', 'enable_hashjoin': 'on', 'enable_indexonlyscan': 'off', 'enable_indexscan': 'off', 'enable_material': 'on', 'enable_mergejoin': 'off', 'enable_nestloop': 'off', 'enable_seqscan': 'on', 'enable_sort': 'on', 'enable_tidscan': 'on', 'from_collapse_limit': 7, 'full_page_writes': 'off', 'geqo': 'on', 'geqo_effort': 9, 'geqo_generations': 90, 'geqo_pool_size': 683, 'geqo_seed': 0.97, 'geqo_selection_bias': 1.65, 'geqo_threshold': 9, 'join_collapse_limit': 16, 'maintenance_work_mem': 797792, 'max_connections': 9520, 'max_files_per_process': 45246, 'max_locks_per_transaction': 47, 'max_parallel_workers_per_gather': 172, 'max_pred_locks_per_transaction': 494, 'max_prepared_transactions': 496, 'max_stack_depth': 7204, 'max_wal_size': 15, 'max_worker_processes': 171, 'min_parallel_relation_size': 119312, 'min_wal_size': 11, 'old_snapshot_threshold': 45739, 'parallel_setup_cost': 1189.42, 'parallel_tuple_cost': 0.86, 'quote_all_identifiers': 'off', 'random_page_cost': 5.28, 'replacement_sort_tuples': 1101851140, 'seq_page_cost': 2.13, 'shared_buffers': 725178, 'temp_buffers': 35293, 'temp_file_limit': 4134891, 'vacuum_cost_delay': 14, 'vacuum_cost_limit': 1371, 'vacuum_cost_page_dirty': 8214, 'vacuum_cost_page_hit': 3109, 'vacuum_cost_page_miss': 4973, 'vacuum_freeze_min_age': 231154538, 'vacuum_freeze_table_age': 1280583730, 'vacuum_multixact_freeze_min_age': 891715617, 'vacuum_multixact_freeze_table_age': 1935763098, 'wal_buffers': 35118, 'wal_compression': 'off', 'wal_log_hints': 'on', 'wal_writer_delay': 221, 'wal_writer_flush_after': 28093, 'work_mem': 232659}
+Performance Statistics:
+{'throughput': 8993.0, 'latency': 1464.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 8993.0 ops/sec
+
+
+========================= Iteration  6 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 24.10669112602725
+  autovacuum_analyze_threshold, Value: 839
+  autovacuum_freeze_max_age, Value: 659875217
+  autovacuum_max_workers, Value: 4680
+  autovacuum_multixact_freeze_max_age, Value: 1225001634
+  autovacuum_naptime, Value: 1850604
+  autovacuum_vacuum_cost_delay, Value: 9
+  autovacuum_vacuum_cost_limit, Value: 3222
+  autovacuum_vacuum_scale_factor, Value: 91.33307271431971
+  autovacuum_vacuum_threshold, Value: 570073674
+  autovacuum_work_mem, Value: 701187
+  backend_flush_after, Value: 57
+  bgwriter_delay, Value: 1871
+  bgwriter_flush_after, Value: 43
+  bgwriter_lru_maxpages, Value: 503
+  bgwriter_lru_multiplier, Value: 1.5868811180211249
+  checkpoint_completion_target, Value: 0.99796389293152
+  checkpoint_flush_after, Value: 119
+  checkpoint_timeout, Value: 20141
+  commit_delay, Value: 2191
+  commit_siblings, Value: 12
+  cpu_index_tuple_cost, Value: 2.724259468085541
+  cpu_operator_cost, Value: 1.2371936947577316
+  cpu_tuple_cost, Value: 0.4834410620268347
+  cursor_tuple_fraction, Value: 0.7996197225883848
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 1871
+  default_statistics_target, Value: 908
+  default_transaction_deferrable, Value: 'on'
+  effective_cache_size, Value: 1740285
+  effective_io_concurrency, Value: 110
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'on'
+  enable_hashjoin, Value: 'on'
+  enable_indexonlyscan, Value: 'off'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'off'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'off'
+  enable_tidscan, Value: 'on'
+  from_collapse_limit, Value: 29
+  full_page_writes, Value: 'on'
+  geqo, Value: 'on'
+  geqo_effort, Value: 8
+  geqo_generations, Value: 527
+  geqo_pool_size, Value: 515
+  geqo_seed, Value: 0.15965729811100401
+  geqo_selection_bias, Value: 1.5998939635684395
+  geqo_threshold, Value: 22
+  join_collapse_limit, Value: 31
+  maintenance_work_mem, Value: 690473
+  max_connections, Value: 7109
+  max_files_per_process, Value: 29898
+  max_locks_per_transaction, Value: 205
+  max_parallel_workers_per_gather, Value: 129
+  max_pred_locks_per_transaction, Value: 264
+  max_prepared_transactions, Value: 260
+  max_stack_depth, Value: 1668
+  max_wal_size, Value: 223
+  max_worker_processes, Value: 253
+  min_parallel_relation_size, Value: 108299
+  min_wal_size, Value: 10
+  old_snapshot_threshold, Value: 75346
+  parallel_setup_cost, Value: 479.34497176448355
+  parallel_tuple_cost, Value: 1.5734566696470136
+  quote_all_identifiers, Value: 'on'
+  random_page_cost, Value: 6.4078802627600835
+  replacement_sort_tuples, Value: 441750539
+  seq_page_cost, Value: 3.3517752860968537
+  shared_buffers, Value: 489201
+  temp_buffers, Value: 8398
+  temp_file_limit, Value: 6092276
+  vacuum_cost_delay, Value: 43
+  vacuum_cost_limit, Value: 509
+  vacuum_cost_page_dirty, Value: 6336
+  vacuum_cost_page_hit, Value: 7274
+  vacuum_cost_page_miss, Value: 365
+  vacuum_freeze_min_age, Value: 884081461
+  vacuum_freeze_table_age, Value: 1641602618
+  vacuum_multixact_freeze_min_age, Value: 73586439
+  vacuum_multixact_freeze_table_age, Value: 715401246
+  wal_buffers, Value: 64368
+  wal_compression, Value: 'on'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 1378
+  wal_writer_flush_after, Value: 15840
+  work_mem, Value: 137214
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 24.11, 'autovacuum_analyze_threshold': 839, 'autovacuum_freeze_max_age': 659875217, 'autovacuum_max_workers': 4680, 'autovacuum_multixact_freeze_max_age': 1225001634, 'autovacuum_naptime': 1850604, 'autovacuum_vacuum_cost_delay': 9, 'autovacuum_vacuum_cost_limit': 3222, 'autovacuum_vacuum_scale_factor': 91.33, 'autovacuum_vacuum_threshold': 570073674, 'autovacuum_work_mem': 701187, 'backend_flush_after': 57, 'bgwriter_delay': 1871, 'bgwriter_flush_after': 43, 'bgwriter_lru_maxpages': 503, 'bgwriter_lru_multiplier': 1.59, 'checkpoint_completion_target': 1.0, 'checkpoint_flush_after': 119, 'checkpoint_timeout': 20141, 'commit_delay': 2191, 'commit_siblings': 12, 'cpu_index_tuple_cost': 2.72, 'cpu_operator_cost': 1.24, 'cpu_tuple_cost': 0.48, 'cursor_tuple_fraction': 0.8, 'data_sync_retry': 'on', 'deadlock_timeout': 1871, 'default_statistics_target': 908, 'default_transaction_deferrable': 'on', 'effective_cache_size': 1740285, 'effective_io_concurrency': 110, 'enable_bitmapscan': 'off', 'enable_hashagg': 'on', 'enable_hashjoin': 'on', 'enable_indexonlyscan': 'off', 'enable_indexscan': 'off', 'enable_material': 'on', 'enable_mergejoin': 'off', 'enable_nestloop': 'on', 'enable_seqscan': 'on', 'enable_sort': 'off', 'enable_tidscan': 'on', 'from_collapse_limit': 29, 'full_page_writes': 'on', 'geqo': 'on', 'geqo_effort': 8, 'geqo_generations': 527, 'geqo_pool_size': 515, 'geqo_seed': 0.16, 'geqo_selection_bias': 1.6, 'geqo_threshold': 22, 'join_collapse_limit': 31, 'maintenance_work_mem': 690473, 'max_connections': 7109, 'max_files_per_process': 29898, 'max_locks_per_transaction': 205, 'max_parallel_workers_per_gather': 129, 'max_pred_locks_per_transaction': 264, 'max_prepared_transactions': 260, 'max_stack_depth': 1668, 'max_wal_size': 223, 'max_worker_processes': 253, 'min_parallel_relation_size': 108299, 'min_wal_size': 10, 'old_snapshot_threshold': 75346, 'parallel_setup_cost': 479.34, 'parallel_tuple_cost': 1.57, 'quote_all_identifiers': 'on', 'random_page_cost': 6.41, 'replacement_sort_tuples': 441750539, 'seq_page_cost': 3.35, 'shared_buffers': 489201, 'temp_buffers': 8398, 'temp_file_limit': 6092276, 'vacuum_cost_delay': 43, 'vacuum_cost_limit': 509, 'vacuum_cost_page_dirty': 6336, 'vacuum_cost_page_hit': 7274, 'vacuum_cost_page_miss': 365, 'vacuum_freeze_min_age': 884081461, 'vacuum_freeze_table_age': 1641602618, 'vacuum_multixact_freeze_min_age': 73586439, 'vacuum_multixact_freeze_table_age': 715401246, 'wal_buffers': 64368, 'wal_compression': 'on', 'wal_log_hints': 'off', 'wal_writer_delay': 1378, 'wal_writer_flush_after': 15840, 'work_mem': 137214}
+Performance Statistics:
+{'throughput': 7386.0, 'latency': 8090.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 7386.0 ops/sec
+
+
+========================= Iteration  7 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 77.95296168145268
+  autovacuum_analyze_threshold, Value: 959
+  autovacuum_freeze_max_age, Value: 567921937
+  autovacuum_max_workers, Value: 8048
+  autovacuum_multixact_freeze_max_age, Value: 1940408939
+  autovacuum_naptime, Value: 821442
+  autovacuum_vacuum_cost_delay, Value: 56
+  autovacuum_vacuum_cost_limit, Value: 200
+  autovacuum_vacuum_scale_factor, Value: 89.3447820922534
+  autovacuum_vacuum_threshold, Value: 129918002
+  autovacuum_work_mem, Value: 871609
+  backend_flush_after, Value: 13
+  bgwriter_delay, Value: 130
+  bgwriter_flush_after, Value: 60
+  bgwriter_lru_maxpages, Value: 611
+  bgwriter_lru_multiplier, Value: 4.402247811980747
+  checkpoint_completion_target, Value: 0.8500159479530236
+  checkpoint_flush_after, Value: 97
+  checkpoint_timeout, Value: 62754
+  commit_delay, Value: 3211
+  commit_siblings, Value: 4
+  cpu_index_tuple_cost, Value: 0.8927846769659438
+  cpu_operator_cost, Value: 3.6767896331967833
+  cpu_tuple_cost, Value: 2.4765849360023884
+  cursor_tuple_fraction, Value: 0.2718796936715566
+  data_sync_retry, Value: 'off'
+  deadlock_timeout, Value: 2655
+  default_statistics_target, Value: 1996
+  default_transaction_deferrable, Value: 'on'
+  effective_cache_size, Value: 166017
+  effective_io_concurrency, Value: 243
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'on'
+  enable_material, Value: 'off'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'off'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'on'
+  from_collapse_limit, Value: 39
+  full_page_writes, Value: 'on'
+  geqo, Value: 'off'
+  geqo_effort, Value: 4
+  geqo_generations, Value: 337
+  geqo_pool_size, Value: 449
+  geqo_seed, Value: 0.24751646163677937
+  geqo_selection_bias, Value: 1.545345476020076
+  geqo_threshold, Value: 4
+  join_collapse_limit, Value: 26
+  maintenance_work_mem, Value: 839528
+  max_connections, Value: 2008
+  max_files_per_process, Value: 9182
+  max_locks_per_transaction, Value: 673
+  max_parallel_workers_per_gather, Value: 204
+  max_pred_locks_per_transaction, Value: 763
+  max_prepared_transactions, Value: 918
+  max_stack_depth, Value: 6060
+  max_wal_size, Value: 48
+  max_worker_processes, Value: 201
+  min_parallel_relation_size, Value: 36855
+  min_wal_size, Value: 16
+  old_snapshot_threshold, Value: 59302
+  parallel_setup_cost, Value: 860.3297957891722
+  parallel_tuple_cost, Value: 3.71409563489325
+  quote_all_identifiers, Value: 'on'
+  random_page_cost, Value: 4.769060881295182
+  replacement_sort_tuples, Value: 303625184
+  seq_page_cost, Value: 2.5028157861837643
+  shared_buffers, Value: 599754
+  temp_buffers, Value: 25914
+  temp_file_limit, Value: 19332792
+  vacuum_cost_delay, Value: 31
+  vacuum_cost_limit, Value: 4851
+  vacuum_cost_page_dirty, Value: 821
+  vacuum_cost_page_hit, Value: 1197
+  vacuum_cost_page_miss, Value: 1573
+  vacuum_freeze_min_age, Value: 104580087
+  vacuum_freeze_table_age, Value: 1585678235
+  vacuum_multixact_freeze_min_age, Value: 567831548
+  vacuum_multixact_freeze_table_age, Value: 807918491
+  wal_buffers, Value: 8091
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 3245
+  wal_writer_flush_after, Value: 19532
+  work_mem, Value: 200330
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 77.95, 'autovacuum_analyze_threshold': 959, 'autovacuum_freeze_max_age': 567921937, 'autovacuum_max_workers': 8048, 'autovacuum_multixact_freeze_max_age': 1940408939, 'autovacuum_naptime': 821442, 'autovacuum_vacuum_cost_delay': 56, 'autovacuum_vacuum_cost_limit': 200, 'autovacuum_vacuum_scale_factor': 89.34, 'autovacuum_vacuum_threshold': 129918002, 'autovacuum_work_mem': 871609, 'backend_flush_after': 13, 'bgwriter_delay': 130, 'bgwriter_flush_after': 60, 'bgwriter_lru_maxpages': 611, 'bgwriter_lru_multiplier': 4.4, 'checkpoint_completion_target': 0.85, 'checkpoint_flush_after': 97, 'checkpoint_timeout': 62754, 'commit_delay': 3211, 'commit_siblings': 4, 'cpu_index_tuple_cost': 0.89, 'cpu_operator_cost': 3.68, 'cpu_tuple_cost': 2.48, 'cursor_tuple_fraction': 0.27, 'data_sync_retry': 'off', 'deadlock_timeout': 2655, 'default_statistics_target': 1996, 'default_transaction_deferrable': 'on', 'effective_cache_size': 166017, 'effective_io_concurrency': 243, 'enable_bitmapscan': 'off', 'enable_hashagg': 'off', 'enable_hashjoin': 'off', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'on', 'enable_material': 'off', 'enable_mergejoin': 'on', 'enable_nestloop': 'off', 'enable_seqscan': 'on', 'enable_sort': 'on', 'enable_tidscan': 'on', 'from_collapse_limit': 39, 'full_page_writes': 'on', 'geqo': 'off', 'geqo_effort': 4, 'geqo_generations': 337, 'geqo_pool_size': 449, 'geqo_seed': 0.25, 'geqo_selection_bias': 1.55, 'geqo_threshold': 4, 'join_collapse_limit': 26, 'maintenance_work_mem': 839528, 'max_connections': 2008, 'max_files_per_process': 9182, 'max_locks_per_transaction': 673, 'max_parallel_workers_per_gather': 204, 'max_pred_locks_per_transaction': 763, 'max_prepared_transactions': 918, 'max_stack_depth': 6060, 'max_wal_size': 48, 'max_worker_processes': 201, 'min_parallel_relation_size': 36855, 'min_wal_size': 16, 'old_snapshot_threshold': 59302, 'parallel_setup_cost': 860.33, 'parallel_tuple_cost': 3.71, 'quote_all_identifiers': 'on', 'random_page_cost': 4.77, 'replacement_sort_tuples': 303625184, 'seq_page_cost': 2.5, 'shared_buffers': 599754, 'temp_buffers': 25914, 'temp_file_limit': 19332792, 'vacuum_cost_delay': 31, 'vacuum_cost_limit': 4851, 'vacuum_cost_page_dirty': 821, 'vacuum_cost_page_hit': 1197, 'vacuum_cost_page_miss': 1573, 'vacuum_freeze_min_age': 104580087, 'vacuum_freeze_table_age': 1585678235, 'vacuum_multixact_freeze_min_age': 567831548, 'vacuum_multixact_freeze_table_age': 807918491, 'wal_buffers': 8091, 'wal_compression': 'off', 'wal_log_hints': 'off', 'wal_writer_delay': 3245, 'wal_writer_flush_after': 19532, 'work_mem': 200330}
+Performance Statistics:
+{'throughput': 1034.0, 'latency': 8297.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 1034.0 ops/sec
+
+
+========================= Iteration  8 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 50.236741825473466
+  autovacuum_analyze_threshold, Value: 342
+  autovacuum_freeze_max_age, Value: 1813837556
+  autovacuum_max_workers, Value: 1906
+  autovacuum_multixact_freeze_max_age, Value: 340498981
+  autovacuum_naptime, Value: 1256748
+  autovacuum_vacuum_cost_delay, Value: 26
+  autovacuum_vacuum_cost_limit, Value: 4591
+  autovacuum_vacuum_scale_factor, Value: 75.11104131236156
+  autovacuum_vacuum_threshold, Value: 1951964578
+  autovacuum_work_mem, Value: 583014
+  backend_flush_after, Value: 143
+  bgwriter_delay, Value: 658
+  bgwriter_flush_after, Value: 0
+  bgwriter_lru_maxpages, Value: 362
+  bgwriter_lru_multiplier, Value: 6.857912431187127
+  checkpoint_completion_target, Value: 0.1460930084877458
+  checkpoint_flush_after, Value: 193
+  checkpoint_timeout, Value: 36306
+  commit_delay, Value: 1845
+  commit_siblings, Value: 7
+  cpu_index_tuple_cost, Value: 0.6171933492936381
+  cpu_operator_cost, Value: 2.097917525002307
+  cpu_tuple_cost, Value: 1.1354776610145962
+  cursor_tuple_fraction, Value: 0.8022717244894391
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 4534
+  default_statistics_target, Value: 2665
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 572747
+  effective_io_concurrency, Value: 271
+  enable_bitmapscan, Value: 'on'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'on'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'off'
+  enable_nestloop, Value: 'off'
+  enable_seqscan, Value: 'off'
+  enable_sort, Value: 'off'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 22
+  full_page_writes, Value: 'off'
+  geqo, Value: 'on'
+  geqo_effort, Value: 1
+  geqo_generations, Value: 463
+  geqo_pool_size, Value: 387
+  geqo_seed, Value: 0.651428015064883
+  geqo_selection_bias, Value: 1.9965850845303277
+  geqo_threshold, Value: 33
+  join_collapse_limit, Value: 47
+  maintenance_work_mem, Value: 214040
+  max_connections, Value: 8231
+  max_files_per_process, Value: 42721
+  max_locks_per_transaction, Value: 341
+  max_parallel_workers_per_gather, Value: 69
+  max_pred_locks_per_transaction, Value: 374
+  max_prepared_transactions, Value: 602
+  max_stack_depth, Value: 3377
+  max_wal_size, Value: 179
+  max_worker_processes, Value: 121
+  min_parallel_relation_size, Value: 14562
+  min_wal_size, Value: 4
+  old_snapshot_threshold, Value: 16744
+  parallel_setup_cost, Value: 2328.181834760246
+  parallel_tuple_cost, Value: 0.6186717051852955
+  quote_all_identifiers, Value: 'on'
+  random_page_cost, Value: 2.8914158526603333
+  replacement_sort_tuples, Value: 761818990
+  seq_page_cost, Value: 1.99632280033657
+  shared_buffers, Value: 911846
+  temp_buffers, Value: 19672
+  temp_file_limit, Value: 7786906
+  vacuum_cost_delay, Value: 21
+  vacuum_cost_limit, Value: 9535
+  vacuum_cost_page_dirty, Value: 4263
+  vacuum_cost_page_hit, Value: 9947
+  vacuum_cost_page_miss, Value: 5424
+  vacuum_freeze_min_age, Value: 755167203
+  vacuum_freeze_table_age, Value: 597196048
+  vacuum_multixact_freeze_min_age, Value: 775553089
+  vacuum_multixact_freeze_table_age, Value: 1415855612
+  wal_buffers, Value: 52279
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 3807
+  wal_writer_flush_after, Value: 1402
+  work_mem, Value: 77919
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 50.24, 'autovacuum_analyze_threshold': 342, 'autovacuum_freeze_max_age': 1813837556, 'autovacuum_max_workers': 1906, 'autovacuum_multixact_freeze_max_age': 340498981, 'autovacuum_naptime': 1256748, 'autovacuum_vacuum_cost_delay': 26, 'autovacuum_vacuum_cost_limit': 4591, 'autovacuum_vacuum_scale_factor': 75.11, 'autovacuum_vacuum_threshold': 1951964578, 'autovacuum_work_mem': 583014, 'backend_flush_after': 143, 'bgwriter_delay': 658, 'bgwriter_flush_after': 0, 'bgwriter_lru_maxpages': 362, 'bgwriter_lru_multiplier': 6.86, 'checkpoint_completion_target': 0.15, 'checkpoint_flush_after': 193, 'checkpoint_timeout': 36306, 'commit_delay': 1845, 'commit_siblings': 7, 'cpu_index_tuple_cost': 0.62, 'cpu_operator_cost': 2.1, 'cpu_tuple_cost': 1.14, 'cursor_tuple_fraction': 0.8, 'data_sync_retry': 'on', 'deadlock_timeout': 4534, 'default_statistics_target': 2665, 'default_transaction_deferrable': 'off', 'effective_cache_size': 572747, 'effective_io_concurrency': 271, 'enable_bitmapscan': 'on', 'enable_hashagg': 'off', 'enable_hashjoin': 'off', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'on', 'enable_material': 'on', 'enable_mergejoin': 'off', 'enable_nestloop': 'off', 'enable_seqscan': 'off', 'enable_sort': 'off', 'enable_tidscan': 'off', 'from_collapse_limit': 22, 'full_page_writes': 'off', 'geqo': 'on', 'geqo_effort': 1, 'geqo_generations': 463, 'geqo_pool_size': 387, 'geqo_seed': 0.65, 'geqo_selection_bias': 2.0, 'geqo_threshold': 33, 'join_collapse_limit': 47, 'maintenance_work_mem': 214040, 'max_connections': 8231, 'max_files_per_process': 42721, 'max_locks_per_transaction': 341, 'max_parallel_workers_per_gather': 69, 'max_pred_locks_per_transaction': 374, 'max_prepared_transactions': 602, 'max_stack_depth': 3377, 'max_wal_size': 179, 'max_worker_processes': 121, 'min_parallel_relation_size': 14562, 'min_wal_size': 4, 'old_snapshot_threshold': 16744, 'parallel_setup_cost': 2328.18, 'parallel_tuple_cost': 0.62, 'quote_all_identifiers': 'on', 'random_page_cost': 2.89, 'replacement_sort_tuples': 761818990, 'seq_page_cost': 2.0, 'shared_buffers': 911846, 'temp_buffers': 19672, 'temp_file_limit': 7786906, 'vacuum_cost_delay': 21, 'vacuum_cost_limit': 9535, 'vacuum_cost_page_dirty': 4263, 'vacuum_cost_page_hit': 9947, 'vacuum_cost_page_miss': 5424, 'vacuum_freeze_min_age': 755167203, 'vacuum_freeze_table_age': 597196048, 'vacuum_multixact_freeze_min_age': 775553089, 'vacuum_multixact_freeze_table_age': 1415855612, 'wal_buffers': 52279, 'wal_compression': 'off', 'wal_log_hints': 'off', 'wal_writer_delay': 3807, 'wal_writer_flush_after': 1402, 'work_mem': 77919}
+Performance Statistics:
+{'throughput': 5363.0, 'latency': 4748.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 5363.0 ops/sec
+
+
+========================= Iteration  9 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'on'
+  autovacuum_analyze_scale_factor, Value: 61.29845228620036
+  autovacuum_analyze_threshold, Value: 755
+  autovacuum_freeze_max_age, Value: 1745086456
+  autovacuum_max_workers, Value: 974
+  autovacuum_multixact_freeze_max_age, Value: 53246740
+  autovacuum_naptime, Value: 2143116
+  autovacuum_vacuum_cost_delay, Value: 62
+  autovacuum_vacuum_cost_limit, Value: 9975
+  autovacuum_vacuum_scale_factor, Value: 21.988273862627747
+  autovacuum_vacuum_threshold, Value: 1154410436
+  autovacuum_work_mem, Value: 357551
+  backend_flush_after, Value: 243
+  bgwriter_delay, Value: 3911
+  bgwriter_flush_after, Value: 192
+  bgwriter_lru_maxpages, Value: 8
+  bgwriter_lru_multiplier, Value: 1.8475156851010042
+  checkpoint_completion_target, Value: 0.708080426621154
+  checkpoint_flush_after, Value: 220
+  checkpoint_timeout, Value: 29867
+  commit_delay, Value: 2518
+  commit_siblings, Value: 5
+  cpu_index_tuple_cost, Value: 1.5154226869759901
+  cpu_operator_cost, Value: 0.20262435147427227
+  cpu_tuple_cost, Value: 1.4994312279131312
+  cursor_tuple_fraction, Value: 0.19874880866123762
+  data_sync_retry, Value: 'off'
+  deadlock_timeout, Value: 1159
+  default_statistics_target, Value: 47
+  default_transaction_deferrable, Value: 'on'
+  effective_cache_size, Value: 1102659
+  effective_io_concurrency, Value: 338
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'on'
+  enable_hashjoin, Value: 'on'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'on'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'off'
+  enable_sort, Value: 'off'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 16
+  full_page_writes, Value: 'off'
+  geqo, Value: 'off'
+  geqo_effort, Value: 7
+  geqo_generations, Value: 660
+  geqo_pool_size, Value: 52
+  geqo_seed, Value: 0.8615712009148444
+  geqo_selection_bias, Value: 1.9293618196206008
+  geqo_threshold, Value: 36
+  join_collapse_limit, Value: 1
+  maintenance_work_mem, Value: 51369
+  max_connections, Value: 5871
+  max_files_per_process, Value: 15596
+  max_locks_per_transaction, Value: 771
+  max_parallel_workers_per_gather, Value: 253
+  max_pred_locks_per_transaction, Value: 212
+  max_prepared_transactions, Value: 946
+  max_stack_depth, Value: 4565
+  max_wal_size, Value: 138
+  max_worker_processes, Value: 53
+  min_parallel_relation_size, Value: 62945
+  min_wal_size, Value: 2
+  old_snapshot_threshold, Value: 85285
+  parallel_setup_cost, Value: 2182.1537384320773
+  parallel_tuple_cost, Value: 3.0431993208371853
+  quote_all_identifiers, Value: 'on'
+  random_page_cost, Value: 1.7216847068264165
+  replacement_sort_tuples, Value: 908941886
+  seq_page_cost, Value: 1.373583354255888
+  shared_buffers, Value: 767678
+  temp_buffers, Value: 31354
+  temp_file_limit, Value: 1395419
+  vacuum_cost_delay, Value: 65
+  vacuum_cost_limit, Value: 2357
+  vacuum_cost_page_dirty, Value: 2640
+  vacuum_cost_page_hit, Value: 5680
+  vacuum_cost_page_miss, Value: 3280
+  vacuum_freeze_min_age, Value: 18708959
+  vacuum_freeze_table_age, Value: 1815381150
+  vacuum_multixact_freeze_min_age, Value: 277941649
+  vacuum_multixact_freeze_table_age, Value: 1635219925
+  wal_buffers, Value: 1957
+  wal_compression, Value: 'on'
+  wal_log_hints, Value: 'on'
+  wal_writer_delay, Value: 1210
+  wal_writer_flush_after, Value: 25729
+  work_mem, Value: 101497
+
+Evaluating Configuration:
+{'autovacuum': 'on', 'autovacuum_analyze_scale_factor': 61.3, 'autovacuum_analyze_threshold': 755, 'autovacuum_freeze_max_age': 1745086456, 'autovacuum_max_workers': 974, 'autovacuum_multixact_freeze_max_age': 53246740, 'autovacuum_naptime': 2143116, 'autovacuum_vacuum_cost_delay': 62, 'autovacuum_vacuum_cost_limit': 9975, 'autovacuum_vacuum_scale_factor': 21.99, 'autovacuum_vacuum_threshold': 1154410436, 'autovacuum_work_mem': 357551, 'backend_flush_after': 243, 'bgwriter_delay': 3911, 'bgwriter_flush_after': 192, 'bgwriter_lru_maxpages': 8, 'bgwriter_lru_multiplier': 1.85, 'checkpoint_completion_target': 0.71, 'checkpoint_flush_after': 220, 'checkpoint_timeout': 29867, 'commit_delay': 2518, 'commit_siblings': 5, 'cpu_index_tuple_cost': 1.52, 'cpu_operator_cost': 0.2, 'cpu_tuple_cost': 1.5, 'cursor_tuple_fraction': 0.2, 'data_sync_retry': 'off', 'deadlock_timeout': 1159, 'default_statistics_target': 47, 'default_transaction_deferrable': 'on', 'effective_cache_size': 1102659, 'effective_io_concurrency': 338, 'enable_bitmapscan': 'off', 'enable_hashagg': 'on', 'enable_hashjoin': 'on', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'off', 'enable_material': 'on', 'enable_mergejoin': 'on', 'enable_nestloop': 'on', 'enable_seqscan': 'off', 'enable_sort': 'off', 'enable_tidscan': 'off', 'from_collapse_limit': 16, 'full_page_writes': 'off', 'geqo': 'off', 'geqo_effort': 7, 'geqo_generations': 660, 'geqo_pool_size': 52, 'geqo_seed': 0.86, 'geqo_selection_bias': 1.93, 'geqo_threshold': 36, 'join_collapse_limit': 1, 'maintenance_work_mem': 51369, 'max_connections': 5871, 'max_files_per_process': 15596, 'max_locks_per_transaction': 771, 'max_parallel_workers_per_gather': 253, 'max_pred_locks_per_transaction': 212, 'max_prepared_transactions': 946, 'max_stack_depth': 4565, 'max_wal_size': 138, 'max_worker_processes': 53, 'min_parallel_relation_size': 62945, 'min_wal_size': 2, 'old_snapshot_threshold': 85285, 'parallel_setup_cost': 2182.15, 'parallel_tuple_cost': 3.04, 'quote_all_identifiers': 'on', 'random_page_cost': 1.72, 'replacement_sort_tuples': 908941886, 'seq_page_cost': 1.37, 'shared_buffers': 767678, 'temp_buffers': 31354, 'temp_file_limit': 1395419, 'vacuum_cost_delay': 65, 'vacuum_cost_limit': 2357, 'vacuum_cost_page_dirty': 2640, 'vacuum_cost_page_hit': 5680, 'vacuum_cost_page_miss': 3280, 'vacuum_freeze_min_age': 18708959, 'vacuum_freeze_table_age': 1815381150, 'vacuum_multixact_freeze_min_age': 277941649, 'vacuum_multixact_freeze_table_age': 1635219925, 'wal_buffers': 1957, 'wal_compression': 'on', 'wal_log_hints': 'on', 'wal_writer_delay': 1210, 'wal_writer_flush_after': 25729, 'work_mem': 101497}
+Performance Statistics:
+{'throughput': 2674.0, 'latency': 6200.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 2674.0 ops/sec
+
+
+========================= Iteration 10 =========================
+
+
+Sample from optimizer: 
+Configuration:
+  autovacuum, Value: 'off'
+  autovacuum_analyze_scale_factor, Value: 6.944042642493839
+  autovacuum_analyze_threshold, Value: 618
+  autovacuum_freeze_max_age, Value: 226522714
+  autovacuum_max_workers, Value: 7948
+  autovacuum_multixact_freeze_max_age, Value: 1470937468
+  autovacuum_naptime, Value: 1509146
+  autovacuum_vacuum_cost_delay, Value: -1
+  autovacuum_vacuum_cost_limit, Value: 2500
+  autovacuum_vacuum_scale_factor, Value: 65.2077449970735
+  autovacuum_vacuum_threshold, Value: 1853829629
+  autovacuum_work_mem, Value: 199917
+  backend_flush_after, Value: 208
+  bgwriter_delay, Value: 2612
+  bgwriter_flush_after, Value: 250
+  bgwriter_lru_maxpages, Value: 211
+  bgwriter_lru_multiplier, Value: 5.099800872488723
+  checkpoint_completion_target, Value: 0.24968540385815663
+  checkpoint_flush_after, Value: 244
+  checkpoint_timeout, Value: 69888
+  commit_delay, Value: 1602
+  commit_siblings, Value: 13
+  cpu_index_tuple_cost, Value: 2.0794309605180237
+  cpu_operator_cost, Value: 1.9515075920136518
+  cpu_tuple_cost, Value: 0.09500570057264524
+  cursor_tuple_fraction, Value: 0.6178743168370072
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 3452
+  default_statistics_target, Value: 4618
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 739582
+  effective_io_concurrency, Value: 501
+  enable_bitmapscan, Value: 'on'
+  enable_hashagg, Value: 'on'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'on'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'off'
+  enable_mergejoin, Value: 'off'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'off'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 15
+  full_page_writes, Value: 'off'
+  geqo, Value: 'on'
+  geqo_effort, Value: 10
+  geqo_generations, Value: 165
+  geqo_pool_size, Value: 185
+  geqo_seed, Value: 0.5311254578573681
+  geqo_selection_bias, Value: 1.7765184928143267
+  geqo_threshold, Value: 13
+  join_collapse_limit, Value: 6
+  maintenance_work_mem, Value: 392995
+  max_connections, Value: 517
+  max_files_per_process, Value: 35752
+  max_locks_per_transaction, Value: 472
+  max_parallel_workers_per_gather, Value: 6
+  max_pred_locks_per_transaction, Value: 585
+  max_prepared_transactions, Value: 30
+  max_stack_depth, Value: 6574
+  max_wal_size, Value: 197
+  max_worker_processes, Value: 78
+  min_parallel_relation_size, Value: 99323
+  min_wal_size, Value: 5
+  old_snapshot_threshold, Value: 25574
+  parallel_setup_cost, Value: 1449.5200420510514
+  parallel_tuple_cost, Value: 0.24662718259934105
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 5.75012501791392
+  replacement_sort_tuples, Value: 1721777840
+  seq_page_cost, Value: 3.7399602668130485
+  shared_buffers, Value: 246886
+  temp_buffers, Value: 133
+  temp_file_limit, Value: 17637157
+  vacuum_cost_delay, Value: 7
+  vacuum_cost_limit, Value: 3634
+  vacuum_cost_page_dirty, Value: 1072
+  vacuum_cost_page_hit, Value: 6170
+  vacuum_cost_page_miss, Value: 2818
+  vacuum_freeze_min_age, Value: 460557241
+  vacuum_freeze_table_age, Value: 332989699
+  vacuum_multixact_freeze_min_age, Value: 901041796
+  vacuum_multixact_freeze_table_age, Value: 241636845
+  wal_buffers, Value: 23589
+  wal_compression, Value: 'on'
+  wal_log_hints, Value: 'on'
+  wal_writer_delay, Value: 2444
+  wal_writer_flush_after, Value: 21249
+  work_mem, Value: 256753
+
+Evaluating Configuration:
+{'autovacuum': 'off', 'autovacuum_analyze_scale_factor': 6.94, 'autovacuum_analyze_threshold': 618, 'autovacuum_freeze_max_age': 226522714, 'autovacuum_max_workers': 7948, 'autovacuum_multixact_freeze_max_age': 1470937468, 'autovacuum_naptime': 1509146, 'autovacuum_vacuum_cost_delay': -1, 'autovacuum_vacuum_cost_limit': 2500, 'autovacuum_vacuum_scale_factor': 65.21, 'autovacuum_vacuum_threshold': 1853829629, 'autovacuum_work_mem': 199917, 'backend_flush_after': 208, 'bgwriter_delay': 2612, 'bgwriter_flush_after': 250, 'bgwriter_lru_maxpages': 211, 'bgwriter_lru_multiplier': 5.1, 'checkpoint_completion_target': 0.25, 'checkpoint_flush_after': 244, 'checkpoint_timeout': 69888, 'commit_delay': 1602, 'commit_siblings': 13, 'cpu_index_tuple_cost': 2.08, 'cpu_operator_cost': 1.95, 'cpu_tuple_cost': 0.1, 'cursor_tuple_fraction': 0.62, 'data_sync_retry': 'on', 'deadlock_timeout': 3452, 'default_statistics_target': 4618, 'default_transaction_deferrable': 'off', 'effective_cache_size': 739582, 'effective_io_concurrency': 501, 'enable_bitmapscan': 'on', 'enable_hashagg': 'on', 'enable_hashjoin': 'off', 'enable_indexonlyscan': 'on', 'enable_indexscan': 'off', 'enable_material': 'off', 'enable_mergejoin': 'off', 'enable_nestloop': 'on', 'enable_seqscan': 'off', 'enable_sort': 'on', 'enable_tidscan': 'off', 'from_collapse_limit': 15, 'full_page_writes': 'off', 'geqo': 'on', 'geqo_effort': 10, 'geqo_generations': 165, 'geqo_pool_size': 185, 'geqo_seed': 0.53, 'geqo_selection_bias': 1.78, 'geqo_threshold': 13, 'join_collapse_limit': 6, 'maintenance_work_mem': 392995, 'max_connections': 517, 'max_files_per_process': 35752, 'max_locks_per_transaction': 472, 'max_parallel_workers_per_gather': 6, 'max_pred_locks_per_transaction': 585, 'max_prepared_transactions': 30, 'max_stack_depth': 6574, 'max_wal_size': 197, 'max_worker_processes': 78, 'min_parallel_relation_size': 99323, 'min_wal_size': 5, 'old_snapshot_threshold': 25574, 'parallel_setup_cost': 1449.52, 'parallel_tuple_cost': 0.25, 'quote_all_identifiers': 'off', 'random_page_cost': 5.75, 'replacement_sort_tuples': 1721777840, 'seq_page_cost': 3.74, 'shared_buffers': 246886, 'temp_buffers': 133, 'temp_file_limit': 17637157, 'vacuum_cost_delay': 7, 'vacuum_cost_limit': 3634, 'vacuum_cost_page_dirty': 1072, 'vacuum_cost_page_hit': 6170, 'vacuum_cost_page_miss': 2818, 'vacuum_freeze_min_age': 460557241, 'vacuum_freeze_table_age': 332989699, 'vacuum_multixact_freeze_min_age': 901041796, 'vacuum_multixact_freeze_table_age': 241636845, 'wal_buffers': 23589, 'wal_compression': 'on', 'wal_log_hints': 'on', 'wal_writer_delay': 2444, 'wal_writer_flush_after': 21249, 'work_mem': 256753}
+Performance Statistics:
+{'throughput': 1501.0, 'latency': 1365.0, 'runtime': 0}
+Evaluation took 0 seconds
+Throughput: 1501.0 ops/sec
+##########################################################
+Statistics:
+#Incumbent changed: 1
+#Submitted target algorithm runs: 10 / 10.0
+#Finished target algorithm runs: 10 / 10.0
+#Configurations: 10
+Used wallclock time: 0.10 / inf sec 
+Used target algorithm runtime: 0.03 / inf sec
+##########################################################
+Final Incumbent: Configuration:
+  autovacuum, Value: 'off'
+  autovacuum_analyze_scale_factor, Value: 95.03215743162382
+  autovacuum_analyze_threshold, Value: 220
+  autovacuum_freeze_max_age, Value: 194587109
+  autovacuum_max_workers, Value: 5384
+  autovacuum_multixact_freeze_max_age, Value: 661147550
+  autovacuum_naptime, Value: 597896
+  autovacuum_vacuum_cost_delay, Value: 46
+  autovacuum_vacuum_cost_limit, Value: 5934
+  autovacuum_vacuum_scale_factor, Value: 17.700161389053267
+  autovacuum_vacuum_threshold, Value: 1340769837
+  autovacuum_work_mem, Value: 20318
+  backend_flush_after, Value: 100
+  bgwriter_delay, Value: 3290
+  bgwriter_flush_after, Value: 162
+  bgwriter_lru_maxpages, Value: 807
+  bgwriter_lru_multiplier, Value: 2.904118083153543
+  checkpoint_completion_target, Value: 0.3528905674947368
+  checkpoint_flush_after, Value: 66
+  checkpoint_timeout, Value: 3614
+  commit_delay, Value: 753
+  commit_siblings, Value: 3
+  cpu_index_tuple_cost, Value: 0.26647893652643073
+  cpu_operator_cost, Value: 0.9422268327217165
+  cpu_tuple_cost, Value: 3.0352510016996077
+  cursor_tuple_fraction, Value: 0.9343240116592529
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 527
+  default_statistics_target, Value: 3648
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 312695
+  effective_io_concurrency, Value: 442
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'off'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'off'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 49
+  full_page_writes, Value: 'on'
+  geqo, Value: 'off'
+  geqo_effort, Value: 5
+  geqo_generations, Value: 267
+  geqo_pool_size, Value: 915
+  geqo_seed, Value: 0.034203197574196986
+  geqo_selection_bias, Value: 1.6056832426386431
+  geqo_threshold, Value: 45
+  join_collapse_limit, Value: 42
+  maintenance_work_mem, Value: 531834
+  max_connections, Value: 4073
+  max_files_per_process, Value: 32640
+  max_locks_per_transaction, Value: 938
+  max_parallel_workers_per_gather, Value: 33
+  max_pred_locks_per_transaction, Value: 875
+  max_prepared_transactions, Value: 740
+  max_stack_depth, Value: 2547
+  max_wal_size, Value: 97
+  max_worker_processes, Value: 43
+  min_parallel_relation_size, Value: 40381
+  min_wal_size, Value: 14
+  old_snapshot_threshold, Value: 27768
+  parallel_setup_cost, Value: 532.9508644044247
+  parallel_tuple_cost, Value: 2.2180983129587855
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 0.04816338709326882
+  replacement_sort_tuples, Value: 93834483
+  seq_page_cost, Value: 0.09545975469760401
+  shared_buffers, Value: 993678
+  temp_buffers, Value: 64016
+  temp_file_limit, Value: 15812080
+  vacuum_cost_delay, Value: 100
+  vacuum_cost_limit, Value: 8182
+  vacuum_cost_page_dirty, Value: 7525
+  vacuum_cost_page_hit, Value: 2927
+  vacuum_cost_page_miss, Value: 8010
+  vacuum_freeze_min_age, Value: 964663942
+  vacuum_freeze_table_age, Value: 1088545316
+  vacuum_multixact_freeze_min_age, Value: 153015556
+  vacuum_multixact_freeze_table_age, Value: 45336794
+  wal_buffers, Value: 40929
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 422
+  wal_writer_flush_after, Value: 7319
+  work_mem, Value: 40075
+
+Estimated cost of incumbent: -9117.000000
+
+Best Configuration:
+Configuration:
+  autovacuum, Value: 'off'
+  autovacuum_analyze_scale_factor, Value: 95.03215743162382
+  autovacuum_analyze_threshold, Value: 220
+  autovacuum_freeze_max_age, Value: 194587109
+  autovacuum_max_workers, Value: 5384
+  autovacuum_multixact_freeze_max_age, Value: 661147550
+  autovacuum_naptime, Value: 597896
+  autovacuum_vacuum_cost_delay, Value: 46
+  autovacuum_vacuum_cost_limit, Value: 5934
+  autovacuum_vacuum_scale_factor, Value: 17.700161389053267
+  autovacuum_vacuum_threshold, Value: 1340769837
+  autovacuum_work_mem, Value: 20318
+  backend_flush_after, Value: 100
+  bgwriter_delay, Value: 3290
+  bgwriter_flush_after, Value: 162
+  bgwriter_lru_maxpages, Value: 807
+  bgwriter_lru_multiplier, Value: 2.904118083153543
+  checkpoint_completion_target, Value: 0.3528905674947368
+  checkpoint_flush_after, Value: 66
+  checkpoint_timeout, Value: 3614
+  commit_delay, Value: 753
+  commit_siblings, Value: 3
+  cpu_index_tuple_cost, Value: 0.26647893652643073
+  cpu_operator_cost, Value: 0.9422268327217165
+  cpu_tuple_cost, Value: 3.0352510016996077
+  cursor_tuple_fraction, Value: 0.9343240116592529
+  data_sync_retry, Value: 'on'
+  deadlock_timeout, Value: 527
+  default_statistics_target, Value: 3648
+  default_transaction_deferrable, Value: 'off'
+  effective_cache_size, Value: 312695
+  effective_io_concurrency, Value: 442
+  enable_bitmapscan, Value: 'off'
+  enable_hashagg, Value: 'off'
+  enable_hashjoin, Value: 'off'
+  enable_indexonlyscan, Value: 'off'
+  enable_indexscan, Value: 'off'
+  enable_material, Value: 'off'
+  enable_mergejoin, Value: 'on'
+  enable_nestloop, Value: 'on'
+  enable_seqscan, Value: 'on'
+  enable_sort, Value: 'on'
+  enable_tidscan, Value: 'off'
+  from_collapse_limit, Value: 49
+  full_page_writes, Value: 'on'
+  geqo, Value: 'off'
+  geqo_effort, Value: 5
+  geqo_generations, Value: 267
+  geqo_pool_size, Value: 915
+  geqo_seed, Value: 0.034203197574196986
+  geqo_selection_bias, Value: 1.6056832426386431
+  geqo_threshold, Value: 45
+  join_collapse_limit, Value: 42
+  maintenance_work_mem, Value: 531834
+  max_connections, Value: 4073
+  max_files_per_process, Value: 32640
+  max_locks_per_transaction, Value: 938
+  max_parallel_workers_per_gather, Value: 33
+  max_pred_locks_per_transaction, Value: 875
+  max_prepared_transactions, Value: 740
+  max_stack_depth, Value: 2547
+  max_wal_size, Value: 97
+  max_worker_processes, Value: 43
+  min_parallel_relation_size, Value: 40381
+  min_wal_size, Value: 14
+  old_snapshot_threshold, Value: 27768
+  parallel_setup_cost, Value: 532.9508644044247
+  parallel_tuple_cost, Value: 2.2180983129587855
+  quote_all_identifiers, Value: 'off'
+  random_page_cost, Value: 0.04816338709326882
+  replacement_sort_tuples, Value: 93834483
+  seq_page_cost, Value: 0.09545975469760401
+  shared_buffers, Value: 993678
+  temp_buffers, Value: 64016
+  temp_file_limit, Value: 15812080
+  vacuum_cost_delay, Value: 100
+  vacuum_cost_limit, Value: 8182
+  vacuum_cost_page_dirty, Value: 7525
+  vacuum_cost_page_hit, Value: 2927
+  vacuum_cost_page_miss, Value: 8010
+  vacuum_freeze_min_age, Value: 964663942
+  vacuum_freeze_table_age, Value: 1088545316
+  vacuum_multixact_freeze_min_age, Value: 153015556
+  vacuum_multixact_freeze_table_age, Value: 45336794
+  wal_buffers, Value: 40929
+  wal_compression, Value: 'off'
+  wal_log_hints, Value: 'off'
+  wal_writer_delay, Value: 422
+  wal_writer_flush_after, Value: 7319
+  work_mem, Value: 40075
+
+Throughput: 9117.0 ops/sec
+Saved @ results/ycsb.workloada/seed1

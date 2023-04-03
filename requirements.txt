@@ -10,4 +10,4 @@ smac==1.1.0
 numpy
 
 # cpu-only torch
-torch==1.10.1+cpu
+# torch==1.10.1+cpu

@@ -17,7 +17,12 @@ from smac.facade.smac_hpo_facade import SMAC4AC
 
 # pylint: disable=logging-fstring-interpolation
 import logging
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO)
+### 实现 log 输出到文件 by Sunlly0
+logging.basicConfig(level=logging.INFO,filename='smac_test.log',filemode='a',format=
+                    '%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'
+                    #日志格式
+)
 logger = logging.getLogger()
 
 def fix_global_random_state(seed=None):
