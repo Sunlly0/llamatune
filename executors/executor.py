@@ -52,35 +52,42 @@ def trim_disks():
 def get_measured_performance(perf_stats, benchmark):
     """ Return throughput & 95-th latency percentile """
     if benchmark == 'ycsb':
-        overall_stats = perf_stats['ycsb']['groups']['overall']['statistics']
-        throughput, runtime = (
-            overall_stats['Throughput(ops/sec)'],
-            overall_stats['RunTime(ms)'] / 1000.0)
+        # overall_stats = perf_stats['ycsb']['groups']['overall']['statistics']
+        # throughput, runtime = (
+        #     overall_stats['Throughput(ops/sec)'],
+        #     overall_stats['RunTime(ms)'] / 1000.0)
 
-        # Check if Return=ERROR in read/update results
-        error = False
-        try:
-            read_stats = perf_stats['ycsb']['groups']['read']['statistics']
-            assert 'Return=ERROR' not in read_stats.keys()
-            update_stats = perf_stats['ycsb']['groups']['update']['statistics']
-            assert 'Return=ERROR' not in update_stats.keys()
-        except AssertionError:
-            logger.warning('Return=ERROR found in YCSB; Treating it as failed run!')
-            throughput, latency = 0.1, 2 ** 30
-            error = True
+        # # Check if Return=ERROR in read/update results
+        # error = False
+        # try:
+        #     read_stats = perf_stats['ycsb']['groups']['read']['statistics']
+        #     assert 'Return=ERROR' not in read_stats.keys()
+        #     update_stats = perf_stats['ycsb']['groups']['update']['statistics']
+        #     assert 'Return=ERROR' not in update_stats.keys()
+        # except AssertionError:
+        #     logger.warning('Return=ERROR found in YCSB; Treating it as failed run!')
+        #     throughput, latency = 0.1, 2 ** 30
+        #     error = True
 
-        if not error:
-            # Manually compute latency (weighted by ops)
-            groups = [
-                g for name, g in perf_stats['ycsb']['groups'].items()
-                if name != 'overall'
-            ]
-            latency_info = [ # latencies are in micro-seconds
-                (float(g['statistics']['p95']), int(g['statistics']['Return=OK']))
-                for g in groups
-            ]
-            latencies, weights = tuple(zip(*latency_info))
-            latency = np.average(latencies, weights=weights) / 1000.0
+        # if not error:
+        #     # Manually compute latency (weighted by ops)
+        #     groups = [
+        #         g for name, g in perf_stats['ycsb']['groups'].items()
+        #         if name != 'overall'
+        #     ]
+        #     latency_info = [ # latencies are in micro-seconds
+        #         (float(g['statistics']['p95']), int(g['statistics']['Return=OK']))
+        #         for g in groups
+        #     ]
+        #     latencies, weights = tuple(zip(*latency_info))
+        #     latency = np.average(latencies, weights=weights) / 1000.0
+        
+        ## 模拟性能 by Sunlly
+        summary_stats = perf_stats['pgbench_summary']
+        throughput, latency, runtime = (
+            summary_stats['throughput(req/sec)'],
+            summary_stats['95th_lat(ms)'],
+            summary_stats['time(sec)'])
 
     elif benchmark == 'oltpbench':
         summary_stats = perf_stats['oltpbench_summary']
@@ -94,6 +101,11 @@ def get_measured_performance(perf_stats, benchmark):
             summary_stats['throughput(req/sec)'],
             summary_stats['95th_lat(ms)'],
             summary_stats['time(sec)'])
+    # elif benchmark == 'pgbench':
+    #     overall_stats = perf_stats['benchbase_summary']
+    #     throughput, runtime = (
+    #         overall_stats['Throughput(ops/sec)'],
+    #         overall_stats['RunTime(ms)'] / 1000.0)
     else:
         raise NotImplementedError(f'Benchmark `{benchmark}` is not supported')
 
@@ -237,7 +249,7 @@ class NautilusExecutor(ExecutorInterface):
     def evaluate_configuration(self, dbms_info, benchmark_info):
         """ Call Nautilus executor RPC """
         # trim disks before sending request
-        trim_disks()
+        # trim_disks()
 
         # NOTE: protobuf explicitely converts ints to floats; this is a workaround
         # https://stackoverflow.com/questions/51818125/how-to-use-ints-in-a-protobuf-struct
@@ -251,9 +263,12 @@ class NautilusExecutor(ExecutorInterface):
         # Construct request
         config = Struct()
         config.update(dbms_info['config']) # pylint: disable=no-member
+        ## 此处和 proto 的dbms_info 不匹配， proto 中缺少 version (已包含在 dbms_info 中），导致代码报错。 by Sunlly
+        # dbms_info = ExecuteRequest.DBMSInfo(
+        #     name=dbms_info['name'], config=config, version=dbms_info['version'])
         dbms_info = ExecuteRequest.DBMSInfo(
-            name=dbms_info['name'], config=config, version=dbms_info['version'])
-
+            name=dbms_info['name'], config=config)
+        
         if benchmark_info['name'] == 'ycsb':
             request = ExecuteRequest(
                 dbms_info=dbms_info, ycsb_info=benchmark_info)
@@ -268,6 +283,7 @@ class NautilusExecutor(ExecutorInterface):
 
         # Do RPC
         logger.debug(f'Calling Nautilus RPC with request:\n{request}')
+        response=Struct()
         try:
             response = self.stub.Execute(request, timeout=self.EXECUTE_TIMEOUT_SECS)
         except Exception as err:
@@ -275,7 +291,7 @@ class NautilusExecutor(ExecutorInterface):
             with open('error.txt', 'a') as f:
                 f.write(repr(err))
 
-        logger.info(f'Received response JSON [len={len(response.results)}]')
+        # logger.info(f'Received response JSON [len={len(response.results)}]')
         results = MessageToDict(response)['results']
 
         # Save results
@@ -298,10 +314,16 @@ class NautilusExecutor(ExecutorInterface):
                 results['performance_stats'], benchmark_info['name'])
         if not self.parse_metrics:
             return perf
+        
+        # 感觉一般不用 metrics
+        # metrics = np.random.rand(self.num_dbms_metrics)
 
         # Parse DBMS metrics and return along with perf
-        return perf, get_dbms_metrics(results, self.num_dbms_metrics)
+        # return perf, get_dbms_metrics(results, self.num_dbms_metrics)
 
+        ## by Sunlly
+        metrics = np.random.rand(self.num_dbms_metrics)
+        return perf, metrics
 
     def close(self):
         """ Close connection to Nautilus """
@@ -317,12 +339,12 @@ class NautilusExecutor(ExecutorInterface):
             ])
         self.stub = ExecutionServiceStub(self.channel)
 
-        response = self.stub.Heartbeat(EmptyMessage(), **kwargs)
-        logger.info(f'{10*"="} Nautilus Info {10*"="}')
-        logger.info(f'Alive since  : {response.alive_since.ToDatetime()}')
-        logger.info(f'Current time : {response.time_now.ToDatetime()}')
-        logger.info(f'Jobs finished: {response.jobs_finished}')
-        logger.info(f'{35 * "="}')
+        # response = self.stub.Heartbeat(EmptyMessage(), **kwargs)
+        # logger.info(f'{10*"="} Nautilus Info {10*"="}')
+        # logger.info(f'Alive since  : {response.alive_since.ToDatetime()}')
+        # logger.info(f'Current time : {response.time_now.ToDatetime()}')
+        # logger.info(f'Jobs finished: {response.jobs_finished}')
+        # logger.info(f'{35 * "="}')
 
 class QueryFromDatasetExecutor(ExecutorInterface):
     def __init__(self, spaces, storage, dataset=None):

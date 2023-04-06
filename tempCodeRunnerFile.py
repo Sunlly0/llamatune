@@ -1,0 +1,5 @@
+        # response = self.stub.Heartbeat(EmptyMessage(), **kwargs)
+        # print(f'{10*"="} Nautilus Info {10*"="}')
+        # print(f'Alive since  : {response.alive_since.ToDatetime()}')
+        # print(f'Current time : {response.time_now.ToDatetime()}')
+        # print(f'Jobs finished: {response.jobs_finished}')
