@@ -1,0 +1,1 @@
+{"run_info": {"warm_up": {"result": "ok"}, "benchmark": {"result": "ok"}}, "performance_stats": {"pgbench_summary": {"throughput(req/sec)": 270.971574, "time(sec)": 93.06205582618713, "95th_lat(ms)": 36.907}, "ycsb_result": "ok", "ycsb_raw_result": "ok"}}

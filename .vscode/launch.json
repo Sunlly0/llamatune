@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             // "justMyCode": true,
-            "args": ["configs/ycsbA.all.bySunlly.ini","3"]
+            "args": ["configs/ycsbA.all.bySunlly.ini","4"]
         }
     ]
 }
